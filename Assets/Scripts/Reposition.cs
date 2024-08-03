@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class Reposition : MonoBehaviour
 {
+
+    Collider2D col;
+
+    private void Awake()
+    {
+        col = GetComponent<Collider2D>();
+    }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (!collision.CompareTag("Area"))
