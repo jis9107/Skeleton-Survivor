@@ -6,6 +6,7 @@ public class Spawner : MonoBehaviour
 {
 
     public Transform[] spawnPoint;
+    public SpawnData[] spawnData;
 
     int level;
     float timer;
@@ -33,6 +34,7 @@ public class Spawner : MonoBehaviour
     }
 }
 
+[System.Serializable]
 public class SpawnData
 {
     public int spriteType;
