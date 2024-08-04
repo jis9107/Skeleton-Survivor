@@ -7,6 +7,7 @@ public class Spawner : MonoBehaviour
 
     public Transform[] spawnPoint;
 
+    int level;
     float timer;
 
     private void Awake()
@@ -17,7 +18,7 @@ public class Spawner : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-
+        level = Mathf.FloorToInt(GameManager.instance.gameTime / 10f);
         if(timer > 0.2f)
         {
             timer = 0;
