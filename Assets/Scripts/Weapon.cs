@@ -18,7 +18,14 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
-        
+        switch (id)
+        {
+            case 0:
+                transform.Rotate(Vector3.back * speed * Time.deltaTime);
+                break;
+            default:
+                break;
+        }
     }
 
     public void Init()
@@ -26,7 +33,7 @@ public class Weapon : MonoBehaviour
         switch (id)
         {
             case 0:
-                speed = -150; // 시계 방향이기 떄문에 -
+                speed = 150;
                 Batch();
                 break;
             default:
