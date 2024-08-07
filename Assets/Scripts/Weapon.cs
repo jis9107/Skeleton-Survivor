@@ -43,7 +43,11 @@ public class Weapon : MonoBehaviour
 
     public void LevelUp(float damage, int count)
     {
+        this.damage = damage;
+        this.count += count;
 
+        if(id == 0)
+            Batch();
     }
 
     void Batch() // 무기 배치
