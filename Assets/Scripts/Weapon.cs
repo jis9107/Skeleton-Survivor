@@ -25,9 +25,15 @@ public class Weapon : MonoBehaviour
                 break;
             default:
                 break;
+
+        }
+
+        // .. Test Code
+        if (Input.GetButtonDown("Jump"))
+        {
+            LevelUp(20, 5);
         }
     }
-
     public void Init()
     {
         switch (id)
@@ -39,6 +45,7 @@ public class Weapon : MonoBehaviour
             default:
                 break;
         }
+
     }
 
     public void LevelUp(float damage, int count)
@@ -54,8 +61,19 @@ public class Weapon : MonoBehaviour
     {
         for (int i = 0; i < count; i++)
         {
-            Transform bullet = GameManager.instance.pool.Get(prefabId).transform;
-            bullet.parent = transform;
+            Transform bullet;
+            if( i < transform.childCount)  // 기존 오브젝트를 활용하고 모자란 것을 풀링에서 가져오기
+            {
+                bullet = transform.GetChild(i);
+            }
+            else
+            {
+                bullet = GameManager.instance.pool.Get(prefabId).transform;
+                bullet.parent = transform;
+            }
+
+            bullet.localPosition = Vector3.zero; // 위치 초기화
+            bullet.localRotation = Quaternion.identity; // 회전 초기화
 
             Vector3 rotVec = Vector3.forward * 360 * i / count; // 무기 갯수에 맞춰 각도 변환
             bullet.Rotate(rotVec); 
