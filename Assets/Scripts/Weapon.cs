@@ -41,12 +41,17 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    void Batch() // 배치
+    void Batch() // 무기 배치
     {
         for (int i = 0; i < count; i++)
         {
             Transform bullet = GameManager.instance.pool.Get(prefabId).transform;
             bullet.parent = transform;
+
+            Vector3 rotVec = Vector3.forward * 360 * i / count;
+            bullet.Rotate(rotVec);
+            bullet.Translate(bullet.up * 1.5f, Space.World);
+
             bullet.GetComponent<Bullet>().Init(damage, -1); // -1 is Infinity Per.
         }
     }
