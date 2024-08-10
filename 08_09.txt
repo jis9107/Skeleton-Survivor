@@ -27,6 +27,9 @@ Firebase SDK 연동하여 데이터 관리 및 로그인 기능 구현 가능
 Photon Server를 활용한 멀티 플레이 게임 제작
 오브젝트 풀링을 활용하여 메모리 최적화, 싱글톤 패턴  2D Defense Game, 3D RPG Game 프로젝트 제작 경험
 
+JAVA
+간단한 게임 제작 및 공공기관포털 API를 Json으로 파싱하여 Android Studio환경에서 어플리케이션 개발 경험, 이클립스 환경에서 간단한 보드 게임 제작 가능
+
 
 
 
