@@ -20,7 +20,7 @@ public class Bullet : MonoBehaviour
 
         if( per > -1) // 원거리 무기 판별
         {
-            rigid.velocity = dir;
+            rigid.velocity = dir * 15f;
         }
     }
 
