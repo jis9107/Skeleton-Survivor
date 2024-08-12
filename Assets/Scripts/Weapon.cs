@@ -16,7 +16,7 @@ public class Weapon : MonoBehaviour
 
     private void Awake()
     {
-        
+        player = GetComponentInParent<Player>();
     }
     private void Start()
     {
@@ -57,6 +57,7 @@ public class Weapon : MonoBehaviour
                 Batch();
                 break;
             default:
+                speed = 0.3f;
                 break;
         }
 
@@ -99,6 +100,10 @@ public class Weapon : MonoBehaviour
 
     void Fire()
     {
+        if (!player.scanner.nearestTarget)
+            return;
         
+        Transform bullet = GameManager.instance.pool.Get(prefabId).transform;
+        bullet.position = transform.position;
     }
 }

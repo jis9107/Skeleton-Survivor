@@ -18626,6 +18626,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputVec: {x: 0, y: 0}
   speed: 3
+  scanner: {fileID: 0}
 --- !u!114 &2059542110
 MonoBehaviour:
   m_ObjectHideFlags: 0
