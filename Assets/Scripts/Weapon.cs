@@ -10,6 +10,8 @@ public class Weapon : MonoBehaviour
     public int count;
     public float speed;
 
+    float timer;
+
 
     private void Start()
     {
@@ -24,6 +26,13 @@ public class Weapon : MonoBehaviour
                 transform.Rotate(Vector3.back * speed * Time.deltaTime);
                 break;
             default:
+                timer += Time.deltaTime;
+
+                if(timer > speed)
+                {
+                    timer = 0f;
+                    Fire();
+                }
                 break;
 
         }
@@ -57,7 +66,7 @@ public class Weapon : MonoBehaviour
             Batch();
     }
 
-    void Batch() // 무기 배치
+    void Batch() // 근접 무기 배치
     {
         for (int i = 0; i < count; i++)
         {
@@ -81,5 +90,10 @@ public class Weapon : MonoBehaviour
 
             bullet.GetComponent<Bullet>().Init(damage, -1); // -1 is Infinity Per.
         }
+    }
+
+    void Fire()
+    {
+        if()
     }
 }
