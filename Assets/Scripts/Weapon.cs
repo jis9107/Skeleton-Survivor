@@ -12,7 +12,12 @@ public class Weapon : MonoBehaviour
 
     float timer;
 
+    Player player;
 
+    private void Awake()
+    {
+        
+    }
     private void Start()
     {
         Init();
@@ -94,6 +99,6 @@ public class Weapon : MonoBehaviour
 
     void Fire()
     {
-        if()
+        
     }
 }
