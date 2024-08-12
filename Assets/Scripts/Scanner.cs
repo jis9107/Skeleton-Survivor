@@ -13,7 +13,8 @@ public class Scanner : MonoBehaviour
     private void FixedUpdate()
     {
         targets = Physics2D.CircleCastAll(transform.position, scanRange, Vector2.zero, 0, targetLayer);
-                                        //(캐스팅 시작 위치, 원의 반지름, 캐스팅 방향, 캐스팅 길이, 대상 레이어)
+        //(캐스팅 시작 위치, 원의 반지름, 캐스팅 방향, 캐스팅 길이, 대상 레이어)
+        nearestTarget = GetNearest();
     }
 
     Transform GetNearest()
@@ -25,6 +26,14 @@ public class Scanner : MonoBehaviour
         {
             Vector3 myPos = transform.position;
             Vector3 targetPos = target.transform.position;
+
+            float curDiff = Vector3.Distance(myPos, targetPos); // 두 사이의 거리
+
+            if(curDiff < diff)
+            {
+                diff = curDiff;
+                result = target.transform;
+            }
 
         }
 
