@@ -12,7 +12,7 @@ public class Reposition : MonoBehaviour
         col = GetComponent<Collider2D>();
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision) // 플레이어의 움직임에 따라 4개로 나눠진 맵이 이동하여 무한 맵을 생성한다
     {
         if (!collision.CompareTag("Area"))
             return;
@@ -20,7 +20,7 @@ public class Reposition : MonoBehaviour
         Vector3 playerPos = GameManager.instance.player.transform.position;
         Vector3 myPos = transform.position;
 
-        float diffX = Mathf.Abs(playerPos.x - myPos.x);
+        float diffX = Mathf.Abs(playerPos.x - myPos.x); 
         float diffY = Mathf.Abs(playerPos.y - myPos.y);
 
         Vector3 playerDir = GameManager.instance.player.inputVec;
