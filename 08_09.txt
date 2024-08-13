@@ -51,6 +51,7 @@ Android Studio App
 
 08/14 해야 할 일
 	게임잡 지원
+	2D 게임 2강의 듣기
 	
 
 
