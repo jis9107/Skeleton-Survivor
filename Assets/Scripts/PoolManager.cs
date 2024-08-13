@@ -20,7 +20,7 @@ public class PoolManager : MonoBehaviour
         }
     }
 
-    public GameObject Get(int index)
+    public GameObject Get(int index) // 메모리 절약 함수
     {
         GameObject select = null;
 
