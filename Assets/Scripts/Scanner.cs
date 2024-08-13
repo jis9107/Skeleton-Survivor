@@ -17,7 +17,7 @@ public class Scanner : MonoBehaviour
         nearestTarget = GetNearest();
     }
 
-    Transform GetNearest()
+    Transform GetNearest() // 가장 가까운 거리에 있는 적 판별
     {
         Transform result = null;
         float diff = 100;
