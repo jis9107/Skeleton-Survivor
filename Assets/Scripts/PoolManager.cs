@@ -10,7 +10,7 @@ public class PoolManager : MonoBehaviour
     // 2. 풀 담당을 하는 리스트
     List<GameObject>[] pools;
 
-    private void Awake()
+    private void Awake() // 풀 매니저에 등록되어 있는 프리팹을 리스트에 초기화
     {
         pools = new List<GameObject>[prefabs.Length];
 
