@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
 
 
     Rigidbody2D rigid;
+    Collider2D col;
     SpriteRenderer spriter;
     Animator anim;
     WaitForFixedUpdate wait; // 다음 번 FixedUpdate()가 실행되기까지 기다린다.
@@ -78,6 +79,11 @@ public class Enemy : MonoBehaviour
         }
         else // die
         {
+            isLive = false;
+            col.enabled = false;
+            rigid.simulated = false;
+            spriter.sortingOrder = 1;
+            anim.SetBool("Dead", true);
             Dead();
         }
     }
