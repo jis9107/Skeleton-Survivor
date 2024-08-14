@@ -70,13 +70,19 @@ public class Enemy : MonoBehaviour
 
         if(health > 0) // live
         {
-
+            anim.SetTrigger("Hit");
         }
         else // die
         {
             Dead();
         }
     }
+
+    IEnumerator KnockBack()
+    {
+
+    }
+
 
     void Dead()
     {
