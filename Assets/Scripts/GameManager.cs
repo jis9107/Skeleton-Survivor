@@ -12,6 +12,11 @@ public class GameManager : MonoBehaviour
     public float gameTime;
     public float maxGameTime = 2 * 10f;
 
+    public int level;
+    public int kill;
+    public int exp;
+    public int[] nextExp;
+
     private void Awake()
     {
         instance = this;
