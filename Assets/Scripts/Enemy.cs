@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -17,13 +18,15 @@ public class Enemy : MonoBehaviour
     Rigidbody2D rigid;
     SpriteRenderer spriter;
     Animator anim;
+    WaitForFixedUpdate wait; // 다음 번 FixedUpdate()가 실행되기까지 기다린다.
 
     // Start is called before the first frame update
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
         spriter = GetComponent<SpriteRenderer>(); 
-        anim = GetComponent<Animator>();  
+        anim = GetComponent<Animator>();
+        wait = new WaitForFixedUpdate();
     }
 
     // Update is called once per frame
@@ -80,7 +83,7 @@ public class Enemy : MonoBehaviour
 
     IEnumerator KnockBack()
     {
-
+        yield return wait; // 하나의 물리 프레임을 딜레이
     }
 
 
