@@ -6,16 +6,19 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance; // 어느 스크립트에서도 접근하기 쉽게 인스터스화
 
+    [Header("# Game Object")]
     public PoolManager pool;
     public Player player;
 
+    [Header("# Game Control")]
     public float gameTime;
     public float maxGameTime = 2 * 10f;
 
+    [Header("# Player Info")]
     public int level;
     public int kill;
     public int exp;
-    public int[] nextExp;
+    public int[] nextExp = { 3, 10, 25, 70, 125, 200, 300, 380, 480, 600 };
 
     private void Awake()
     {
@@ -29,7 +32,17 @@ public class GameManager : MonoBehaviour
         {
             gameTime = maxGameTime;
         }
+    }
 
+    public void GetExp()
+    {
+        exp++;
+
+        if (exp == nextExp[level])
+        {
+            level++;
+            exp = 0;
+        }
     }
 
 
