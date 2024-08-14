@@ -18070,6 +18070,10 @@ MonoBehaviour:
   player: {fileID: 2059542109}
   gameTime: 0
   maxGameTime: 20
+  level: 0
+  kill: 0
+  exp: 0
+  nextExp: 0000000000000000000000000000000000000000000000000000000000000000
 --- !u!1 &1462145029
 GameObject:
   m_ObjectHideFlags: 0

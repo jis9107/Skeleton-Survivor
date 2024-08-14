@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     public int level;
     public int kill;
     public int exp;
-    public int[] nextExp = { 3, 10, 25, 70, 125, 200, 300, 380, 480, 600 };
+    public int[] nextExp = new int[10] { 3, 10, 25, 50, 90, 130, 180, 250, 400, 600 };
 
     private void Awake()
     {
@@ -37,7 +37,6 @@ public class GameManager : MonoBehaviour
     public void GetExp()
     {
         exp++;
-
         if (exp == nextExp[level])
         {
             level++;
