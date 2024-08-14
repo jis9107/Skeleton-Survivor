@@ -18,11 +18,12 @@ public class GameManager : MonoBehaviour
     public int level;
     public int kill;
     public int exp;
-    public int[] nextExp = new int[10] { 3, 10, 25, 50, 90, 130, 180, 250, 400, 600 };
+    public int[] nextExp;
 
     private void Awake()
     {
         instance = this;
+        nextExp = new int[10] { 3, 10, 25, 50, 90, 130, 180, 250, 400, 600 };
     }
 
     private void Update()
