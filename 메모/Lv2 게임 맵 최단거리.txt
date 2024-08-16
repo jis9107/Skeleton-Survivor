@@ -20,7 +20,7 @@ class Solution {
         //큐가 없어질 때 까지 반복
         while(que.Count != 0)
         {
-            //int형으로 q값 받기
+            //int형으로 q값 받기 => 현재 위치를 받는다.
             (int a, int b) = que.Dequeue();
             
             //상 하 좌 우 4번 반복
