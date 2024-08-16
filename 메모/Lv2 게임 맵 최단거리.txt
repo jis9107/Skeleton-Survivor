@@ -1,0 +1,62 @@
+Bfs 이용
+
+using System;
+using System.Collections.Generic;
+
+class Solution {
+    
+    int n, m; // 맵의 길이 선언
+    
+    //상 하 좌 우 이동에 필요한 배열
+    int[] dx = {-1, 1, 0, 0};
+    int[] dy = {0, 0, -1, 1};
+    
+    Queue<(int, int)> que = new Queue<(int, int)>();
+    
+    public void Bfs(int i, int j, int[,] arr)
+    {
+        que.Enqueue((i,j)); // 큐에 지금 위치 넣기     
+        
+        //큐가 없어질 때 까지 반복
+        while(que.Count != 0)
+        {
+            //int형으로 q값 받기
+            (int a, int b) = que.Dequeue();
+            
+            //상 하 좌 우 4번 반복
+            for(int k = 0; k < 4; k++)
+            {
+                //현재 받은 위치에서 dx, dy 많큼 이동
+                int x = a + dx[k]; 
+                int y = b + dy[k];
+                
+                // 안되는 조건 => 이동한 위치 값은 0보다 작으면 안되고, 맵의 길이를 벗어나면 안된다.
+                if( x < 0 || x >= n || y < 0 || y >= m)
+                    continue;
+                // 또한 이동한 위치에 배열 값이 0이여도 안된다. (벽이면 안된다)
+                if(arr[x,y] == 0)
+                    continue;
+                // 이동한 위치에 값이 1일 경우
+                if(arr[x,y] == 1)
+                {
+                    arr[x,y] = arr[a,b] + 1; // 카운트 증가
+                    que.Enqueue((x, y)); // 지금 위치 큐에 저장
+                }
+            }
+        }
+
+    }    
+    
+    public int solution(int[,] maps) 
+    {
+        n = maps.GetLength(0); // 가로 길이
+        m = maps.GetLength(1); // 세로 길이
+        
+        Bfs(0, 0, maps);
+        
+        // 도달하지 못한다면 상대팀 진영의 값은 1이므로 -1 리턴
+        if(maps[n-1, m-1] == 1) return -1;
+        // 도달한다면 상대팀 진영의 값이 카운트 된 값이므로 리턴
+        else return maps[n-1, m-1];
+    }
+}
