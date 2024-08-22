@@ -18966,7 +18966,7 @@ MonoBehaviour:
   gameTime: 0
   maxGameTime: 20
   health: 0
-  maxHealth: 0
+  maxHealth: 100
   level: 0
   kill: 0
   exp: 0
