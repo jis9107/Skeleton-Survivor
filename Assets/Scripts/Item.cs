@@ -33,7 +33,12 @@ public class Item : MonoBehaviour
         {
             case ItemData.ItemTpye.Melee:
             case ItemData.ItemTpye.Range:
-
+                if (level == 0)
+                {
+                    GameObject newWeapon = new GameObject();
+                    weapon = newWeapon.AddComponent<Weapon>();
+                    weapon.Init(data); // √ ±‚»≠
+                }
                 break;
 
             case ItemData.ItemTpye.Glove:
