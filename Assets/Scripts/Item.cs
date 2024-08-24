@@ -24,7 +24,34 @@ public class Item : MonoBehaviour
 
     private void LateUpdate()
     {
-        textLevel.text = "Lv." + (level + 1);
+        textLevel.text = "Lv." + (level);
+    }
+
+    public void OnClick()
+    {
+        switch (data.itemTpye)
+        {
+            case ItemData.ItemTpye.Melee:
+            case ItemData.ItemTpye.Range:
+
+                break;
+
+            case ItemData.ItemTpye.Glove:
+                break;
+
+            case ItemData.ItemTpye.Shoe:
+                break;
+
+            case ItemData.ItemTpye.Heal:
+                break;
+        }
+
+        level++;
+
+        if(level == data.damages.Length) // 레벨이 최대값이 된다면
+        {
+            GetComponent<Button>().interactable = false;
+        }
     }
 
 
