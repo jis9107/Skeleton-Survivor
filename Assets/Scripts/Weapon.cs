@@ -16,11 +16,7 @@ public class Weapon : MonoBehaviour
 
     private void Awake()
     {
-        player = GetComponentInParent<Player>();
-    }
-    private void Start()
-    {
-        Init();
+        player = GameManager.instance.player;
     }
 
     void Update()
@@ -62,7 +58,11 @@ public class Weapon : MonoBehaviour
 
         for(int i = 0; i < GameManager.instance.pool.prefabs.Length; i++)
         {
-
+            if(data.projectile == GameManager.instance.pool.prefabs[i])
+            {
+                prefabId = i;
+                break;
+            }
         }
 
         switch (id)
