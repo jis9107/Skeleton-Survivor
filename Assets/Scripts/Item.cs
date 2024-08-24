@@ -30,7 +30,8 @@ public class Item : MonoBehaviour
     public void OnClick()
     {
         switch (data.itemTpye)
-        {
+        { 
+            // Melee, Range¸¦ ¹­¾î¼­
             case ItemData.ItemTpye.Melee:
             case ItemData.ItemTpye.Range:
                 if (level == 0)
@@ -51,10 +52,11 @@ public class Item : MonoBehaviour
                 }
                 break;
 
+            // Glove, Shoe ¹­¾î¼­
             case ItemData.ItemTpye.Glove:
-                break;
-
             case ItemData.ItemTpye.Shoe:
+
+
                 break;
 
             case ItemData.ItemTpye.Heal:
