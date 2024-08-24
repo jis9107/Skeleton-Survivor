@@ -7,6 +7,7 @@ public class Item : MonoBehaviour
 {
     public ItemData data;
     public Weapon weapon;
+    public Gear gear;
 
     Image icon;
     Text textLevel;
@@ -55,7 +56,17 @@ public class Item : MonoBehaviour
             // Glove, Shoe 묶어서
             case ItemData.ItemTpye.Glove:
             case ItemData.ItemTpye.Shoe:
-
+                if (level == 0)
+                {
+                    GameObject newGear = new GameObject();
+                    gear = newGear.AddComponent<Gear>();
+                    gear.Init(data); // 초기화
+                }
+                else
+                {
+                    float nextRate = data.damages[level];
+                    gear.LevelUp(nextRate);
+                }
 
                 break;
 

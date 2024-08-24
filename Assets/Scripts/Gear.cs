@@ -23,7 +23,7 @@ public class Gear : MonoBehaviour
 
     }
 
-    public void Levelup(float rate)
+    public void LevelUp(float rate)
     {
         this.rate = rate;
         ApplyGear();
