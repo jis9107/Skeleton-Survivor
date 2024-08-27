@@ -51,6 +51,7 @@ public class Item : MonoBehaviour
 
                     weapon.LevelUp(nextDamage, nextCount);
                 }
+                level++;
                 break;
 
             // Glove, Shoe 묶어서
@@ -67,14 +68,13 @@ public class Item : MonoBehaviour
                     float nextRate = data.damages[level];
                     gear.LevelUp(nextRate);
                 }
-
+                level++;
                 break;
 
             case ItemData.ItemTpye.Heal:
+                GameManager.instance.health = GameManager.instance.maxHealth;
                 break;
         }
-
-        level++;
 
         if(level == data.damages.Length) // 레벨이 최대값이 된다면
         {

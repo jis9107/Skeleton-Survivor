@@ -76,6 +76,9 @@ public class Weapon : MonoBehaviour
                 break;
         }
 
+        // 특정 함수 호출을 모든 자식에게 방송한다.
+        // 플레이어가 가지고 있는 모든 Gear에 한해서 ApplyGear를 실행시킨다.
+        player.BroadcastMessage("ApplyGear", SendMessageOptions.DontRequireReceiver);
     }
 
     public void LevelUp(float damage, int count)
@@ -85,6 +88,10 @@ public class Weapon : MonoBehaviour
 
         if(id == 0)
             Batch();
+
+        // 특정 함수 호출을 모든 자식에게 방송한다.
+        // 플레이어가 가지고 있는 모든 Gear에 한해서 ApplyGear를 실행시킨다.
+        player.BroadcastMessage("ApplyGear", SendMessageOptions.DontRequireReceiver);
     }
 
     void Batch() // 근접 무기 배치
