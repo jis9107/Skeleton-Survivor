@@ -32,6 +32,23 @@ public class Item : MonoBehaviour
     private void OnEnable()
     {
         textLevel.text = "Lv." + (level);
+
+        switch (data.itemTpye)
+        {
+            case ItemData.ItemTpye.Melee:
+            case ItemData.ItemTpye.Range:
+                textDesc.text = string.Format(data.itemDesc, data.damages[level] * 100, data.counts[level]);
+                break;
+
+            case ItemData.ItemTpye.Glove:
+            case ItemData.ItemTpye.Shoe:
+                textDesc.text = string.Format(data.itemDesc, data.damages[level] * 100);
+                break;
+            
+            default:
+                textDesc.text = string.Format(data.itemDesc);
+                break;
+        }
     }
 
     public void OnClick()
