@@ -25,6 +25,9 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        if (!GameManager.instance.isLive)
+            return;
+
         inputVec.x = Input.GetAxisRaw("Horizontal");
         inputVec.y = Input.GetAxisRaw("Vertical");
     }
@@ -32,6 +35,9 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!GameManager.instance.isLive)
+            return;
+
         Vector2 nextVec = inputVec.normalized * speed * Time.fixedDeltaTime; // 속도 제어
         rigid.MovePosition(rigid.position + nextVec);
     }
@@ -43,6 +49,9 @@ public class Player : MonoBehaviour
 
     private void LateUpdate() // 업데이트가 끝나고 다음 프레임으로 넘어갈 때 실행된다.
     {
+        if (!GameManager.instance.isLive)
+            return;
+
         anim.SetFloat("Speed", inputVec.magnitude);
 
         if(inputVec.x != 0)
