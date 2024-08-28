@@ -10,7 +10,10 @@ public class Item : MonoBehaviour
     public Gear gear;
 
     Image icon;
+
     Text textLevel;
+    Text textName; 
+    Text textDesc;
     
     public int level;
 
@@ -21,9 +24,12 @@ public class Item : MonoBehaviour
 
         Text[] texts = GetComponentsInChildren<Text>();
         textLevel = texts[0];
+        textName = texts[1];
+        textDesc = texts[2];
+        textName.text = data.itemName;
     }
 
-    private void LateUpdate()
+    private void OnEnable()
     {
         textLevel.text = "Lv." + (level);
     }
