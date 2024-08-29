@@ -29,4 +29,33 @@ public class LevelUp : MonoBehaviour
     {
         items[index].OnClick();
     }
+
+    void Next()
+    {
+        // 1. 모든 아이템 비활성화
+        foreach (Item item in items)
+        {
+            item.gameObject.SetActive(false);
+        }
+
+        // 2. 그 중에서 랜덤 3개 아이템 활성화
+        int[] random = new int[3];
+
+        while(true)
+        {
+            random[0] = Random.Range(0, items.Length);
+            random[1] = Random.Range(0, items.Length);
+            random[2] = Random.Range(0, items.Length);
+
+            // if문을 통해 모두 같지 않을 때까지 while문을 반복하고, 다 다른 수라면 while문을 빠져나온다.
+            if (random[0] != random[1] && random[1] != random[2] && random[0] != random[2])
+                break;
+        }
+        
+
+        // 3. 만렙 아이템의 경우는 소비 아이템으로 대체
+
+    }
 }
+
+
