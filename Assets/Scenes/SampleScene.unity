@@ -20677,7 +20677,7 @@ MonoBehaviour:
   level: 0
   kill: 0
   exp: 0
-  nextExp: 
+  nextExp: 030000000a00000019000000320000005a000000c80000004a010000e00100008a02000084030000
 --- !u!1 &1462145029
 GameObject:
   m_ObjectHideFlags: 0

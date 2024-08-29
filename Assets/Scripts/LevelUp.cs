@@ -15,13 +15,14 @@ public class LevelUp : MonoBehaviour
 
     public void Show()
     {
+        Next();
         rect.localScale = Vector3.one;
         GameManager.instance.Stop();
     }
 
     public void Hide()
     {
-        rect.localScale -= Vector3.zero;
+        rect.localScale = Vector3.zero;
         GameManager.instance.Resume();
     }
 
@@ -51,9 +52,22 @@ public class LevelUp : MonoBehaviour
             if (random[0] != random[1] && random[1] != random[2] && random[0] != random[2])
                 break;
         }
-        
 
-        // 3. 만렙 아이템의 경우는 소비 아이템으로 대체
+        for (int i = 0; i < random.Length; i++)
+        {
+            Item randomItem = items[random[i]];
+
+            // 3. 만렙 아이템의 경우는 소비 아이템으로 대체
+            if(randomItem.level == randomItem.data.damages.Length )
+            {
+                items[4].gameObject.SetActive(true);
+            }
+            else
+            {
+                randomItem.gameObject.SetActive(true);
+            }
+        }
+
 
     }
 }

@@ -32,7 +32,6 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         health = maxHealth;
-        nextExp = new int[]{ 3, 10, 25, 50, 90, 130, 180, 250, 400, 600 };
 
         // 임시 스크립트 (첫번째 캐릭터 선택)
         uiLevelUp.Select(1);
@@ -53,7 +52,7 @@ public class GameManager : MonoBehaviour
     public void GetExp()
     {
         exp++;
-        if (exp == nextExp[level])
+        if (exp == nextExp[Mathf.Min(level, nextExp.Length -1)])
         {
             level++;
             exp = 0;

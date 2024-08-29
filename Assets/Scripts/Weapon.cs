@@ -102,6 +102,7 @@ public class Weapon : MonoBehaviour
         for (int i = 0; i < count; i++)
         {
             Transform bullet;
+
             if( i < transform.childCount)  // 기존 오브젝트를 활용하고 모자란 것을 풀링에서 가져오기
             {
                 bullet = transform.GetChild(i);
