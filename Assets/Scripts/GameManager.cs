@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,8 +18,8 @@ public class GameManager : MonoBehaviour
     public bool isLive;
 
     [Header("# Player Info")]
-    public int health;
-    public int maxHealth;
+    public float health;
+    public float maxHealth;
     public int level;
     public int kill;
     public int exp;
@@ -34,6 +35,11 @@ public class GameManager : MonoBehaviour
         health = maxHealth;
         uiLevelUp.Select(1); // 임시 스크립트 (첫번째 캐릭터 선택)
         isLive = true;
+    }
+
+    public void GameRetry()
+    {
+        SceneManager.LoadScene(0);
     }
 
     private void Update()
