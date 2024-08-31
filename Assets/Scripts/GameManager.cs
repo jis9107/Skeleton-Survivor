@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
     {
         health = maxHealth;
         uiLevelUp.Select(1); // 임시 스크립트 (첫번째 캐릭터 선택)
-        isLive = true;
+        Resume();
     }
 
     public void GameOver()
@@ -92,6 +92,8 @@ public class GameManager : MonoBehaviour
 
     public void GetExp()
     {
+        if (!isLive)
+            return;
         exp++;
         if (exp == nextExp[Mathf.Min(level, nextExp.Length -1)])
         {
