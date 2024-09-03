@@ -23,7 +23,14 @@ public class AchiveManager : MonoBehaviour
 
     void Init()
     {
-        PlayerPrefs.SetInt("MyData", 1);
+
+        foreach (Achive achive in achives)
+        {
+            PlayerPrefs.SetInt(achive.ToString(), 0);
+        }
+/*        PlayerPrefs.SetInt("MyData", 1); // Key Value ∑Œ ¿˙¿Â
+        PlayerPrefs.SetInt("UnLockPotato", 0);
+        PlayerPrefs.SetInt("UnLockBean", 0);*/
     }
 
     private void Start()
