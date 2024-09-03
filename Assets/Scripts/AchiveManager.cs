@@ -13,12 +13,17 @@ public class AchiveManager : MonoBehaviour
         UnLockPotato,
         UnLickBean
     }
-
     Achive[] achives; // 저장소
+
 
     private void Awake()
     {
         achives = (Achive[])Enum.GetValues(typeof(Achive)); // enum 타입 값을 가져온다.
+    }
+
+    void Init()
+    {
+        PlayerPrefs.SetInt("MyData", 1);
     }
 
     private void Start()
