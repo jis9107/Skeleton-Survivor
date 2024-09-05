@@ -12,11 +12,16 @@ public class AudioManager : MonoBehaviour
     AudioSource bgmPlayer;
 
     [Header("#SFX")] // 효과음
-    public AudioClip sfxClip;
+    public AudioClip[] sfxClips;
     public float sfxVolume;
     public int channels;
     AudioSource[] sfxPlayers;
     int channelIndex;
+
+    public enum SFX
+    {
+        Dead, Hit, LevelUp = 3, Lose, Melee, Range = 7, Select, Win = 9 
+    }
 
     private void Awake()
     {
@@ -45,8 +50,24 @@ public class AudioManager : MonoBehaviour
             sfxPlayers[i] = sfxObject.AddComponent<AudioSource>();
             sfxPlayers[i].playOnAwake = false;
             sfxPlayers[i].volume = sfxVolume;
-
         }
 
+    }
+
+    public void PlaySFX(SFX sfx)
+    {
+        for(int i = 0; i < sfxPlayers.Length; i++)
+        {
+            // 채널 개수만큼 순회하도록 채털인덱스 변수 활용
+            int loopIndex = (i + channelIndex) % sfxPlayers.Length;
+
+            if (sfxPlayers[loopIndex].isPlaying)
+                continue;
+
+            channelIndex = loopIndex;
+            sfxPlayers[loopIndex].clip = sfxClips[(int)sfx];
+            sfxPlayers[loopIndex].Play();
+            break;
+        }
     }
 }
