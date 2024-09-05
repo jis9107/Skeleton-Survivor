@@ -10,6 +10,10 @@ public class AudioManager : MonoBehaviour
     public AudioClip bgmClip;
     public float bgmVolume;
     AudioSource bgmPlayer;
+    // 게임이 멈춰 있을 떄 BGM이 들리는 것을 방지하기 위해
+    // 일정 주파수의 음역대는 거르는 컴포넌트를 사용
+    AudioHighPassFilter bgmEffect; 
+    
 
     [Header("#SFX")] // 효과음
     public AudioClip[] sfxClips;
@@ -39,6 +43,7 @@ public class AudioManager : MonoBehaviour
         bgmPlayer.loop = true;
         bgmPlayer.volume = bgmVolume;
         bgmPlayer.clip = bgmClip;
+        bgmEffect = Camera.main.GetComponent<AudioHighPassFilter>();
 
         // 효과음 플레이어 초기화
         GameObject sfxObject = new GameObject("SFXPlayer");
@@ -49,6 +54,7 @@ public class AudioManager : MonoBehaviour
         {
             sfxPlayers[i] = sfxObject.AddComponent<AudioSource>();
             sfxPlayers[i].playOnAwake = false;
+            sfxPlayers[i].bypassListenerEffects = true;
             sfxPlayers[i].volume = sfxVolume;
         }
 
@@ -83,7 +89,11 @@ public class AudioManager : MonoBehaviour
             bgmPlayer.Play();
 
         else
-            bgmPlayer.Stop();
-        
+            bgmPlayer.Stop(); 
+    }
+
+    public void EffectBGM(bool isPlay)
+    {
+        bgmEffect.enabled = isPlay;
     }
 }
