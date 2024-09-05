@@ -64,10 +64,26 @@ public class AudioManager : MonoBehaviour
             if (sfxPlayers[loopIndex].isPlaying)
                 continue;
 
+            int ranIndex = 0;
+            if(sfx == SFX.Hit || sfx == SFX.Melee)
+            {
+                ranIndex = Random.Range(0, 2);
+            }
+
             channelIndex = loopIndex;
-            sfxPlayers[loopIndex].clip = sfxClips[(int)sfx];
+            sfxPlayers[loopIndex].clip = sfxClips[(int)sfx + ranIndex];
             sfxPlayers[loopIndex].Play();
             break;
         }
+    }
+
+    public void PlayBGM(bool isPlay)
+    {
+        if (isPlay)
+            bgmPlayer.Play();
+
+        else
+            bgmPlayer.Stop();
+        
     }
 }

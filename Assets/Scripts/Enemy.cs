@@ -87,6 +87,7 @@ public class Enemy : MonoBehaviour
         if(health > 0) // live
         {
             anim.SetTrigger("Hit");
+            AudioManager.instance.PlaySFX(AudioManager.SFX.Hit);
         }
         else // die
         {
@@ -97,6 +98,10 @@ public class Enemy : MonoBehaviour
             anim.SetBool("Dead", true);
             GameManager.instance.kill++;
             GameManager.instance.GetExp();
+
+            // 시간이 지나 게임 승리 시 모든 Enemy가 죽는 상태가 되므로 오디오 메모리가 극도로 늘어남을 방지한다
+            if(GameManager.instance.isLive == true)
+                AudioManager.instance.PlaySFX(AudioManager.SFX.Dead);
         }
     }
 
