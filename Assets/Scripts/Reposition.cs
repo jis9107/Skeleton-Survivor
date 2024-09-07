@@ -49,7 +49,9 @@ public class Reposition : MonoBehaviour
                 if(col.enabled)
                 {
                     Vector3 dist = playerPos - myPos;
-                    transform.Translate(dist);
+                    Vector3 ran = new Vector3(Random.Range(-3, 3), Random.Range(-3, 3), 0);
+
+                    transform.Translate(ran + dist * 2);
                 }
                 break;
         }
