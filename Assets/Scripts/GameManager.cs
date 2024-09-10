@@ -94,6 +94,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    public void GameQuit()
+    {
+        Application.Quit();
+    }
+
     private void Update()
     {
         if (!isLive)
@@ -134,6 +139,8 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         uiJoyStick.localScale = Vector3.one;
     }
+
+
 
 
 }
