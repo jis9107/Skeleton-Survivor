@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public LevelUp uiLevelUp;
     public Result uiResult;
     public GameObject enemyCleaner;
+    public Transform uiJoyStick;
 
     [Header("# Game Control")]
     public float gameTime;
@@ -124,12 +125,14 @@ public class GameManager : MonoBehaviour
     {
         isLive = false;
         Time.timeScale = 0; // 시간이 흐르는 속도
+        uiJoyStick.localScale = Vector3.zero;
     }
 
     public void Resume()
     {
         isLive = true;
         Time.timeScale = 1;
+        uiJoyStick.localScale = Vector3.one;
     }
 
 
