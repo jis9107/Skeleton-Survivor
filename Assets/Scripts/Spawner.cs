@@ -40,6 +40,11 @@ public class Spawner : MonoBehaviour
         enemy.transform.position = spawnPoint[Random.Range(1, spawnPoint.Length)].position;
         enemy.GetComponent<Enemy>().Init(spawnData[level]);
     }
+
+    void ChestSpawn()
+    {
+
+    }
 }
 
 [System.Serializable]
