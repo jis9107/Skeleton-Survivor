@@ -7,6 +7,9 @@ public class Enemy : MonoBehaviour
 {
     public Rigidbody2D target;
     public RuntimeAnimatorController[] animCon;
+    public GameObject dropExp;
+
+    
 
     public float speed;
     public float health;
@@ -20,6 +23,7 @@ public class Enemy : MonoBehaviour
     SpriteRenderer spriter;
     Animator anim;
     WaitForFixedUpdate wait; // 다음 번 FixedUpdate()가 실행되기까지 기다린다.
+    
 
     // Start is called before the first frame update
     void Awake()
@@ -91,13 +95,14 @@ public class Enemy : MonoBehaviour
         }
         else // die
         {
+            dropExp.SetActive(true);
             isLive = false;
             col.enabled = false;
             rigid.simulated = false;
             spriter.sortingOrder = 1;
             anim.SetBool("Dead", true);
             GameManager.instance.kill++;
-            GameManager.instance.pool.Get(3);
+            
             //GameManager.instance.GetExp();
 
 
