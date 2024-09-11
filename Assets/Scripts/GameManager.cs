@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public float gameTime;
     public float maxGameTime = 2 * 10f;
     public bool isLive;
+    public int money;
 
     [Header("# Player Info")]
     public int playerId;

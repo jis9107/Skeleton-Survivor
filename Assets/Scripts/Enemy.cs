@@ -7,7 +7,6 @@ public class Enemy : MonoBehaviour
 {
     public Rigidbody2D target;
     public RuntimeAnimatorController[] animCon;
-    public GameObject dropExp;
 
     
 
@@ -95,13 +94,14 @@ public class Enemy : MonoBehaviour
         }
         else // die
         {
-            dropExp.SetActive(true);
             isLive = false;
             col.enabled = false;
             rigid.simulated = false;
             spriter.sortingOrder = 1;
             anim.SetBool("Dead", true);
             GameManager.instance.kill++;
+            GameObject dropExp = GameManager.instance.pool.Get(3);
+            dropExp.transform.position = this.transform.position;
             
             //GameManager.instance.GetExp();
 
