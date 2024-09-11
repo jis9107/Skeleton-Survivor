@@ -52,8 +52,6 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         StartCoroutine(GameOverRoutine());
-
-
     }
 
     IEnumerator GameOverRoutine()
