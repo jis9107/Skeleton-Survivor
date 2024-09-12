@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,12 +15,15 @@ public class GameManager : MonoBehaviour
     public Result uiResult;
     public GameObject enemyCleaner;
     public Transform uiJoyStick;
+    public Text moneyText;
+    public Text inGameMoneyText;
 
     [Header("# Game Control")]
     public float gameTime;
     public float maxGameTime = 2 * 10f;
     public bool isLive;
     public int money;
+    public int inGameMoney;
 
     [Header("# Player Info")]
     public int playerId;
@@ -52,6 +56,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        InitMoney();
         StartCoroutine(GameOverRoutine());
     }
 
@@ -71,6 +76,7 @@ public class GameManager : MonoBehaviour
 
     public void GameVictory()
     {
+        InitMoney();
         StartCoroutine(GameVictoryRoutine());
     }
 
@@ -91,6 +97,7 @@ public class GameManager : MonoBehaviour
 
     public void GameRetry()
     {
+        InitMoney();
         SceneManager.LoadScene(0);
     }
 
@@ -124,6 +131,18 @@ public class GameManager : MonoBehaviour
             exp = 0;
             uiLevelUp.Show();
         }
+    }
+
+    public void GetInGameMoney(int getMoney)
+    {
+        inGameMoney += getMoney;
+        inGameMoneyText.text = inGameMoney.ToString();
+    }
+
+    public void InitMoney()
+    {
+        money += inGameMoney;
+        moneyText.text = money.ToString();
     }
 
     public void Stop()

@@ -14,7 +14,7 @@ public class AchiveManager : MonoBehaviour
     enum Achive //업적들
     {
         UnLockPotato,
-        UnLickBean
+        UnLickBean,
     }
     Achive[] achives; // 저장소
     // Coroutine을 사용할 때 메모리 낭비를 방지하기 위해 미리 선언 (메모리 최적화)

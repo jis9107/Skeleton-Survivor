@@ -12558,7 +12558,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 500
+  m_Text: 0
 --- !u!222 &611513689
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18812,7 +18812,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 50
+  m_Text: 0
 --- !u!222 &1104248970
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25205,10 +25205,13 @@ MonoBehaviour:
   uiResult: {fileID: 1601492309}
   enemyCleaner: {fileID: 425084837}
   uiJoyStick: {fileID: 1403267732}
+  moneyText: {fileID: 1104248969}
+  inGameMoneyText: {fileID: 611513688}
   gameTime: 0
-  maxGameTime: 300
+  maxGameTime: 10
   isLive: 0
   money: 0
+  inGameMoney: 0
   playerId: 0
   health: 0
   maxHealth: 100

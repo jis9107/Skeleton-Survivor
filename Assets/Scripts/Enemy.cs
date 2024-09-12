@@ -100,8 +100,10 @@ public class Enemy : MonoBehaviour
             spriter.sortingOrder = 1;
             anim.SetBool("Dead", true);
             GameManager.instance.kill++;
+            GameManager.instance.GetInGameMoney(50);
             GameObject dropExp = GameManager.instance.pool.Get(3);
             dropExp.transform.position = this.transform.position;
+
             
             //GameManager.instance.GetExp();
 

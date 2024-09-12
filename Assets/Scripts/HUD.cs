@@ -12,7 +12,8 @@ public class HUD : MonoBehaviour
         Level,
         kill,
         Time,
-        Health
+        Health,
+        money
     }
     public InfoType type;
 
@@ -56,6 +57,11 @@ public class HUD : MonoBehaviour
                 float maxHealth = GameManager.instance.maxHealth;
                 mySlider.value = curHealth / maxHealth;
                 break;
+
+            case InfoType.money:
+                myText.text = string.Format("{0:F0}", GameManager.instance.inGameMoney);
+                break;
+
 
         }
     }
