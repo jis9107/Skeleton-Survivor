@@ -62,6 +62,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator GameOverRoutine()
     {
+        InitMoney();
         isLive = false;
         
         yield return new WaitForSeconds(0.5f);
@@ -77,11 +78,11 @@ public class GameManager : MonoBehaviour
     public void GameVictory()
     {
         StartCoroutine(GameVictoryRoutine());
-        InitMoney();
     }
 
     IEnumerator GameVictoryRoutine()
     {
+        InitMoney();
         isLive = false;
         enemyCleaner.SetActive(true);
 
@@ -98,7 +99,6 @@ public class GameManager : MonoBehaviour
     public void GameRetry()
     {
         SceneManager.LoadScene(0);
-        InitMoney();
     }
 
     public void GameQuit()
