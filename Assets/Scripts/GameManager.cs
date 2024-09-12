@@ -76,8 +76,8 @@ public class GameManager : MonoBehaviour
 
     public void GameVictory()
     {
-        InitMoney();
         StartCoroutine(GameVictoryRoutine());
+        InitMoney();
     }
 
     IEnumerator GameVictoryRoutine()
@@ -97,8 +97,8 @@ public class GameManager : MonoBehaviour
 
     public void GameRetry()
     {
-        InitMoney();
         SceneManager.LoadScene(0);
+        InitMoney();
     }
 
     public void GameQuit()
@@ -136,7 +136,6 @@ public class GameManager : MonoBehaviour
     public void GetInGameMoney(int getMoney)
     {
         inGameMoney += getMoney;
-        inGameMoneyText.text = inGameMoney.ToString();
     }
 
     public void InitMoney()

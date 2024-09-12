@@ -99,18 +99,17 @@ public class Enemy : MonoBehaviour
             rigid.simulated = false;
             spriter.sortingOrder = 1;
             anim.SetBool("Dead", true);
-            GameManager.instance.kill++;
-            GameManager.instance.GetInGameMoney(50);
-            GameObject dropExp = GameManager.instance.pool.Get(3);
-            dropExp.transform.position = this.transform.position;
-
-            
-            //GameManager.instance.GetExp();
-
 
             // 시간이 지나 게임 승리 시 모든 Enemy가 죽는 상태가 되므로 오디오 메모리가 극도로 늘어남을 방지한다
             if(GameManager.instance.isLive == true)
+            {
                 AudioManager.instance.PlaySFX(AudioManager.SFX.Dead);
+                GameManager.instance.kill++;
+                GameManager.instance.GetInGameMoney(50);
+                GameObject dropExp = GameManager.instance.pool.Get(3);
+                dropExp.transform.position = this.transform.position;
+
+            }
         }
     }
 
