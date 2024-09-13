@@ -13,6 +13,7 @@ public class Spawner : MonoBehaviour
 
     int level;
     float timer;
+    float chestTimer;
 
     private void Awake()
     {
@@ -26,11 +27,18 @@ public class Spawner : MonoBehaviour
             return;
 
         timer += Time.deltaTime;
+        chestTimer += Time.deltaTime;
         level = Mathf.Min((Mathf.FloorToInt(GameManager.instance.gameTime / levelTime)), spawnData.Length - 1);
         if(timer > spawnData[level].spawnTime)
         {
             timer = 0;
             Spawn();
+
+            if(chestTimer > spawnData[level].spawnTime * 10)
+            {
+                chestTimer = 0;
+                ChestSpawn();
+            }
         }
     }
 
@@ -43,7 +51,8 @@ public class Spawner : MonoBehaviour
 
     void ChestSpawn()
     {
-
+        GameObject chest = GameManager.instance.pool.Get(4);
+        chest.transform.position = spawnPoint[Random.Range(1, spawnPoint.Length)].position;
     }
 }
 
