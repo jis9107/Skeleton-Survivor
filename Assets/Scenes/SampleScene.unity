@@ -30018,7 +30018,7 @@ MonoBehaviour:
   gameTime: 0
   maxGameTime: 50
   isLive: 0
-  money: 0
+  money: 50
   inGameMoney: 0
   playerId: 0
   health: 0
