@@ -24,7 +24,6 @@ public class InGameItem : MonoBehaviour
         {
             case Type.bomb:
                 StartCoroutine("Bomb");
-                this.gameObject.SetActive(false);
                 break;
 
             case Type.coin:
@@ -45,6 +44,7 @@ public class InGameItem : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
 
         GameManager.instance.enemyCleaner.SetActive(false);
+        this.gameObject.SetActive(false);
     }
 
 }
