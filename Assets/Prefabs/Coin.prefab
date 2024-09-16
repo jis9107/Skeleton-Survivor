@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1143357053176847117
+--- !u!1 &88429606618054061
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6136315968225562498}
-  - component: {fileID: 8371308443804983894}
-  - component: {fileID: 2564422578456701712}
-  - component: {fileID: -4448847203292894160}
-  m_Layer: 6
-  m_Name: Chest
-  m_TagString: Enemy
+  - component: {fileID: 4288649185114750296}
+  - component: {fileID: 9020756789347091807}
+  - component: {fileID: 1953096906931865551}
+  m_Layer: 0
+  m_Name: Coin
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6136315968225562498
+--- !u!4 &4288649185114750296
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1143357053176847117}
+  m_GameObject: {fileID: 88429606618054061}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: -0, y: 0, z: 0.028303515, w: -0.99959934}
+  m_LocalPosition: {x: 3, y: 0, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8371308443804983894
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -3.244}
+--- !u!212 &9020756789347091807
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1143357053176847117}
+  m_GameObject: {fileID: 88429606618054061}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -75,24 +74,24 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 933891f03a7cd884d9aa2fb57544a342, type: 3}
-  m_Color: {r: 0.8792453, g: 0.8792453, b: 0.8792453, a: 1}
+  m_Sprite: {fileID: 21300000, guid: bee702842f8ed864f935e5f60f850d9c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.14, y: 2.6}
+  m_Size: {x: 3.55, y: 3.74}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &2564422578456701712
+--- !u!61 &1953096906931865551
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1143357053176847117}
+  m_GameObject: {fileID: 88429606618054061}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -115,37 +114,19 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 2.56}
-    newSize: {x: 2.14, y: 2.6}
+    oldSize: {x: 3.55, y: 3.74}
+    newSize: {x: 3.55, y: 3.74}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.28, y: 2.56}
+  m_Size: {x: 3.55, y: 3.74}
   m_EdgeRadius: 0
---- !u!114 &-4448847203292894160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1143357053176847117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6276e9f986e997c47beb73bc12035cab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ChestItem:
-  - {fileID: 88429606618054061, guid: e4a5ddc98e569c7439d924d463a3d815, type: 3}
-  - {fileID: 88429606618054061, guid: e4a5ddc98e569c7439d924d463a3d815, type: 3}
-  - {fileID: 88429606618054061, guid: e4a5ddc98e569c7439d924d463a3d815, type: 3}
-  - {fileID: 1603840012131544582, guid: 4300fe7aed7110e458390d54e86179ff, type: 3}
-  - {fileID: 2116856262528294130, guid: 32c8bd7becf00634c8c67ef7da73279d, type: 3}
