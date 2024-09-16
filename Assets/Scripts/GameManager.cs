@@ -157,8 +157,4 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         uiJoyStick.localScale = Vector3.one;
     }
-
-
-
-
 }
