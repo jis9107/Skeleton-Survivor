@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ChestItem:
-  - {fileID: 88429606618054061, guid: e4a5ddc98e569c7439d924d463a3d815, type: 3}
+  - {fileID: 2116856262528294130, guid: 32c8bd7becf00634c8c67ef7da73279d, type: 3}
   - {fileID: 2116856262528294130, guid: 32c8bd7becf00634c8c67ef7da73279d, type: 3}
   - {fileID: 2116856262528294130, guid: 32c8bd7becf00634c8c67ef7da73279d, type: 3}
   - {fileID: 1603840012131544582, guid: 4300fe7aed7110e458390d54e86179ff, type: 3}
