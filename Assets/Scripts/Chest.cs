@@ -11,7 +11,14 @@ public class Chest : MonoBehaviour
         if (!collision.CompareTag("Bullet"))
             return;
 
-        gameObject.SetActive(false);
+        int random = Random.Range(0, ChestItem.Length);
 
+        if (random <= 2)
+            random = 0;
+
+        GameObject dropItem = GameManager.instance.pool.Get(random + 5);
+        dropItem.transform.position = this.transform.position;
+
+        gameObject.SetActive(false);
     }
 }
