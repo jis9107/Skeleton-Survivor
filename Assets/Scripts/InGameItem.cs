@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static ItemData;
 
 public class InGameItem : MonoBehaviour
 {
@@ -10,5 +11,7 @@ public class InGameItem : MonoBehaviour
         coin,
         mag
     }
-   
+
+    public Type itemTpye;
+
 }
