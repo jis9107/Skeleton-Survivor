@@ -14,9 +14,9 @@ public class Chest : MonoBehaviour
         int random = Random.Range(0, ChestItem.Length);
 
         if (random <= 2)
-            random = 0;
+            random = 2;
 
-        GameObject dropItem = GameManager.instance.pool.Get(random + 5);
+        GameObject dropItem = GameManager.instance.pool.Get(random + 3);
         dropItem.transform.position = this.transform.position;
 
         gameObject.SetActive(false);
