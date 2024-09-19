@@ -17,7 +17,7 @@ public class Spawner : MonoBehaviour
 
     private void Awake()
     {
-        spawnPoint = GetComponentsInChildren<Transform>();
+/*        spawnPoint = GetComponentsInChildren<Transform>();*/
         levelTime = GameManager.instance.maxGameTime / spawnData.Length;
     }
     // Update is called once per frame
