@@ -57,7 +57,7 @@ public class Gear : MonoBehaviour
                     weapon.speed = speed + (speed * rate);
                     break;
                 
-                // 원거리 무기
+                // 원거리 무기 (값이 작을 수록 빨라짐)
                 default:
                     speed = 0.5f * Character.WeaponRate;
                     weapon.speed = speed * (1f - rate);
