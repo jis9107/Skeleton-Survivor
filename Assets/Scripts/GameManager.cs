@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
         health = maxHealth;*/
 
         player.gameObject.SetActive(true);
-        uiLevelUp.Select(playerId % 2); // 임시 스크립트 (첫번째 캐릭터 선택)
+        uiLevelUp.Select(1); // 임시 스크립트 (첫번째 캐릭터 선택)
         Resume();
 
 
