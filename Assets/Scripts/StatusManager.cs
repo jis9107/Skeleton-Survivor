@@ -9,8 +9,8 @@ public class StatusManager : MonoBehaviour
 
     Image icon;
 
-    Text charName;
-    Text charLv;
-    Text charDamage;
-    Text charHealth;
+    public Text charName;
+    public Text charLv;
+    public Text charDamage;
+    public Text charHealth;
 }
