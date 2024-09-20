@@ -16,27 +16,11 @@ public class ChooseCharater : MonoBehaviour
 
     public void OnSelectCharacter()
     {
-        switch (charData.characterType)
-        {
-            case CharacterData.CharacterType.blue:
-                icon.sprite = charData.charImage;
-                charName.text = charData.charName;
-                charDamage.text = charData.damage.ToString();
-                charHealth.text = charData.maxHealth.ToString();
-                break;
+        icon.sprite = charData.charImage;
+        charName.text = charData.charName;
+        charDamage.text = charData.damage.ToString();
+        charHealth.text = charData.maxHealth.ToString();
+        GameManager.instance.playerId = charData.charId;
 
-            case CharacterData.CharacterType.pink:
-                icon.sprite = charData.charImage;
-                charName.text = charName.text;
-                charDamage.text = charDamage.text;
-                charHealth.text = charHealth.text;
-                break;
-
-            case CharacterData.CharacterType.orange:
-                break;
-
-            case CharacterData.CharacterType.purple:
-                break;
-        }
     }
 }
