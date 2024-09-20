@@ -21,6 +21,7 @@ public class ChooseCharater : MonoBehaviour
         charDamage.text = charData.damage.ToString();
         charHealth.text = charData.maxHealth.ToString();
         GameManager.instance.playerId = charData.charId;
+        GameManager.instance.maxHealth = charData.maxHealth;
 
     }
 }
