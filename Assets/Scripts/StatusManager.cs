@@ -7,7 +7,7 @@ public class StatusManager : MonoBehaviour
 {
     public CharacterData charData;
 
-    Image icon;
+    Sprite icon;
 
     public Text charName;
     public Text charLv;
