@@ -6,7 +6,7 @@ using UnityEngine.UI;
 [CreateAssetMenu(fileName = "Character", menuName = "Scriptble Object/CharacterData")]
 public class CharacterData : ScriptableObject
 {
-    public enum Character
+    public enum CharacterType
     {
         blue,
         pink,
@@ -15,15 +15,14 @@ public class CharacterData : ScriptableObject
     }
 
     [Header("# Character Info")]
-    public Character character;
+    public CharacterType characterType;
     public int charId;
     public string charName;
-    public Sprite charImage;
+    public Image charImage;
 
     [Header("# Character Status")]
     public float speed;
     public float damage;
     public float maxHealth;
     public int level;
-
 }
