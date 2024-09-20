@@ -18,7 +18,7 @@ public class CharacterData : ScriptableObject
     public CharacterType characterType;
     public int charId;
     public string charName;
-    public Image charImage;
+    public Sprite charImage;
 
     [Header("# Character Status")]
     public float speed;

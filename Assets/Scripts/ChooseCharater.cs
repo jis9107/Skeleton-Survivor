@@ -8,7 +8,7 @@ public class ChooseCharater : MonoBehaviour
 {
     public CharacterData charData;
 
-    public Image icon;
+    public Sprite icon;
     public Text charName;
     public Text charLv;
     public Text charDamage;
@@ -19,31 +19,23 @@ public class ChooseCharater : MonoBehaviour
         switch (charData.characterType)
         {
             case CharacterData.CharacterType.blue:
-                icon.sprite = charData.charImage.sprite;
+                icon = charData.charImage;
                 charName.text = charName.text;
                 charDamage.text = charDamage.text;
                 charHealth.text = charHealth.text;
                 break;
 
             case CharacterData.CharacterType.pink:
-                icon.sprite = charData.charImage.sprite;
+                icon = charData.charImage;
                 charName.text = charName.text;
                 charDamage.text = charDamage.text;
                 charHealth.text = charHealth.text;
                 break;
 
             case CharacterData.CharacterType.orange:
-                icon.sprite = charData.charImage.sprite;
-                charName.text = charName.text;
-                charDamage.text = charDamage.text;
-                charHealth.text = charHealth.text;
                 break;
 
             case CharacterData.CharacterType.purple:
-                icon.sprite = charData.charImage.sprite;
-                charName.text = charName.text;
-                charDamage.text = charDamage.text;
-                charHealth.text = charHealth.text;
                 break;
         }
     }
