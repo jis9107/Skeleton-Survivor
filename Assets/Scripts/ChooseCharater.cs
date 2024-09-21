@@ -20,8 +20,11 @@ public class ChooseCharater : MonoBehaviour
         charName.text = charData.charName;
         charDamage.text = charData.damage.ToString();
         charHealth.text = charData.maxHealth.ToString();
+    }
+
+    public void OnClickSelectButton()
+    {
         GameManager.instance.playerId = charData.charId;
         GameManager.instance.maxHealth = charData.maxHealth;
-
     }
 }

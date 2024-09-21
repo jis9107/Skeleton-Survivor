@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class DataManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    // Manager에 변수들을 저장한다.
+    // 전체적인 데이터 관리 
+    public void Save()
     {
-        
+        // 저장 할 변수들
+        // 1. 캐릭터 레벨
+        // 2. 스테이지
+        // 3. 업적
+        // 4. 돈, 보석
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Load()
     {
-        
+
     }
 }
