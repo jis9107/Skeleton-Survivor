@@ -18,6 +18,7 @@ public class CharacterManager : MonoBehaviour
 
     private void Awake()
     {
+        nowCharacterId = 0; // 나중에 받아올 값
         Init(nowCharacterId);
     }
 
@@ -26,6 +27,7 @@ public class CharacterManager : MonoBehaviour
         nowCharacterId = id;
         icon.sprite = charData[id].charImage;
         charName.text = charData[id].charName;
+        charLv.text = charData[id].level.ToString();
         charDamage.text = charData[id].damage.ToString();
         charHealth.text = charData[id].maxHealth.ToString();
     }
@@ -41,9 +43,16 @@ public class CharacterManager : MonoBehaviour
         nowCharacterId = id;
         icon.sprite = charData[id].charImage;
         charName.text = charData[id].charName;
+        charLv.text = charData[id].level.ToString();
         charDamage.text = charData[id].damage.ToString();
         charHealth.text = charData[id].maxHealth.ToString();
-        GameManager.instance.playerId = charData[nowCharacterId].charId;
-        GameManager.instance.maxHealth = charData[nowCharacterId].maxHealth;
+    }
+
+    public void CharacterUpgrade()
+    {
+        charData[nowCharacterId].level += 1;
+        charData[nowCharacterId].damage += 10;
+        charData[nowCharacterId].maxHealth += 10;
+        Init(nowCharacterId);
     }
 }
