@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a500ed23f66df5049b31ed645b3a64c7, type: 3}
   m_Name: Character 0
   m_EditorClassIdentifier: 
-  character: 0
+  characterType: 0
   charId: 0
   charName: "\uAE40\uBE14\uB8E8"
   charImage: {fileID: -797862156, guid: 99a24620d31e5ce4e823c32d11e17c2c, type: 3}
   speed: 3
   damage: 50
   maxHealth: 500
-  level: 0
+  level: 1
