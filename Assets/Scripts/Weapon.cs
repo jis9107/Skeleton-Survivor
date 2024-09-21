@@ -41,11 +41,6 @@ public class Weapon : MonoBehaviour
 
         }
 
-        // .. Test Code
-        if (Input.GetButtonDown("Jump"))
-        {
-            LevelUp(10, 1);
-        }
     }
     public void Init(ItemData data)
     {
