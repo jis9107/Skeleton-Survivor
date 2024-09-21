@@ -1735,7 +1735,6 @@ GameObject:
   - component: {fileID: 200482242}
   - component: {fileID: 200482241}
   - component: {fileID: 200482240}
-  - component: {fileID: 200482243}
   m_Layer: 5
   m_Name: Character 0
   m_TagString: Untagged
@@ -1809,10 +1808,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 200482243}
-        m_TargetAssemblyTypeName: ChooseCharater, Assembly-CSharp
+      - m_Target: {fileID: 737038553}
+        m_TargetAssemblyTypeName: CharacterManager, Assembly-CSharp
         m_MethodName: OnSelectCharacter
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1859,24 +1858,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 200482238}
   m_CullTransparentMesh: 1
---- !u!114 &200482243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 200482238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44b7b358631177e478ec6c63803aca28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  charData: {fileID: 11400000, guid: c0faed962c54d394b8adf8c4e05ad215, type: 2}
-  icon: {fileID: 944004412}
-  charName: {fileID: 1994908813}
-  charLv: {fileID: 1319272808}
-  charDamage: {fileID: 1954789808}
-  charHealth: {fileID: 1942795832}
 --- !u!1 &228916194
 GameObject:
   m_ObjectHideFlags: 0
@@ -2198,7 +2179,6 @@ GameObject:
   - component: {fileID: 293278058}
   - component: {fileID: 293278057}
   - component: {fileID: 293278056}
-  - component: {fileID: 293278059}
   m_Layer: 5
   m_Name: Character 1
   m_TagString: Untagged
@@ -2272,14 +2252,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 293278059}
-        m_TargetAssemblyTypeName: ChooseCharater, Assembly-CSharp
+      - m_Target: {fileID: 737038553}
+        m_TargetAssemblyTypeName: CharacterManager, Assembly-CSharp
         m_MethodName: OnSelectCharacter
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2322,24 +2302,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 293278054}
   m_CullTransparentMesh: 1
---- !u!114 &293278059
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 293278054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44b7b358631177e478ec6c63803aca28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  charData: {fileID: 11400000, guid: d7bc8f88f0c6fbb4b8377df0372576b5, type: 2}
-  icon: {fileID: 944004412}
-  charName: {fileID: 1994908813}
-  charLv: {fileID: 1319272808}
-  charDamage: {fileID: 1954789808}
-  charHealth: {fileID: 1942795832}
 --- !u!1 &294890906
 GameObject:
   m_ObjectHideFlags: 0
@@ -14812,7 +14774,6 @@ GameObject:
   - component: {fileID: 666341415}
   - component: {fileID: 666341414}
   - component: {fileID: 666341413}
-  - component: {fileID: 666341416}
   m_Layer: 5
   m_Name: Character 3
   m_TagString: Untagged
@@ -14910,18 +14871,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1460448748}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: GameStart
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
 --- !u!114 &666341414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14960,24 +14909,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 666341411}
   m_CullTransparentMesh: 1
---- !u!114 &666341416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 666341411}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44b7b358631177e478ec6c63803aca28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  charData: {fileID: 11400000, guid: c39d44b6319e3b74ca2b64f3fd561e33, type: 2}
-  icon: {fileID: 0}
-  charName: {fileID: 0}
-  charLv: {fileID: 0}
-  charDamage: {fileID: 0}
-  charHealth: {fileID: 0}
 --- !u!1 &686106442
 GameObject:
   m_ObjectHideFlags: 0
@@ -15660,6 +15591,61 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 731647178}
   m_CullTransparentMesh: 1
+--- !u!1 &737038551
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 737038552}
+  - component: {fileID: 737038553}
+  m_Layer: 0
+  m_Name: Character Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &737038552
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737038551}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 527.6574, y: 1032.8164, z: -4.833915}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &737038553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737038551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cec88489ccaedb645b91c6079f734770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charData:
+  - {fileID: 11400000, guid: c0faed962c54d394b8adf8c4e05ad215, type: 2}
+  - {fileID: 11400000, guid: d7bc8f88f0c6fbb4b8377df0372576b5, type: 2}
+  - {fileID: 11400000, guid: 1b925106b9d3fc649bca5499c64e47b3, type: 2}
+  - {fileID: 11400000, guid: c39d44b6319e3b74ca2b64f3fd561e33, type: 2}
+  icon: {fileID: 944004412}
+  charName: {fileID: 1994908813}
+  charLv: {fileID: 1319272808}
+  charDamage: {fileID: 1954789808}
+  charHealth: {fileID: 1942795832}
+  nowCharacterId: 0
 --- !u!1 &741967048
 GameObject:
   m_ObjectHideFlags: 0
@@ -21234,7 +21220,7 @@ GameObject:
   - component: {fileID: 925759571}
   - component: {fileID: 925759570}
   m_Layer: 5
-  m_Name: Character Group (1)
+  m_Name: Character Group
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30362,7 +30348,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1530927941}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 737038553}
+        m_TargetAssemblyTypeName: CharacterManager, Assembly-CSharp
+        m_MethodName: OnClickSelectButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1530927941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33591,7 +33589,6 @@ GameObject:
   - component: {fileID: 2053381546}
   - component: {fileID: 2053381545}
   - component: {fileID: 2053381544}
-  - component: {fileID: 2053381547}
   m_Layer: 5
   m_Name: Character 2
   m_TagString: Untagged
@@ -33687,18 +33684,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1460448748}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: GameStart
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
 --- !u!114 &2053381545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33737,24 +33722,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2053381542}
   m_CullTransparentMesh: 1
---- !u!114 &2053381547
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2053381542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44b7b358631177e478ec6c63803aca28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  charData: {fileID: 11400000, guid: 1b925106b9d3fc649bca5499c64e47b3, type: 2}
-  icon: {fileID: 0}
-  charName: {fileID: 0}
-  charLv: {fileID: 0}
-  charDamage: {fileID: 0}
-  charHealth: {fileID: 0}
 --- !u!1 &2054028814
 GameObject:
   m_ObjectHideFlags: 0
@@ -35221,3 +35188,4 @@ SceneRoots:
   - {fileID: 1158204644}
   - {fileID: 1808491664}
   - {fileID: 270290902}
+  - {fileID: 737038552}
