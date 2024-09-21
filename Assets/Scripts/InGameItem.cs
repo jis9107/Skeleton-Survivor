@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem.Switch;
+//using UnityEngine.InputSystem.Switch;
 using static ItemData;
 
 public class InGameItem : MonoBehaviour
