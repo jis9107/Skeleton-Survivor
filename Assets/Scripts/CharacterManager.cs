@@ -7,6 +7,8 @@ public class CharacterManager : MonoBehaviour
 {
     public CharacterData[] charData;
 
+    DataManager dataManager;
+
     public Image icon;
     public Text charName;
     public Text charLv;
@@ -19,6 +21,8 @@ public class CharacterManager : MonoBehaviour
 
     private void Awake()
     {
+        //데이터 매니저에서 받아올 값 (레벨, 현재 캐릭터 Id)
+        dataManager = GetComponent<DataManager>();
         nowCharacterId = 0; // 나중에 받아올 값
         Init(nowCharacterId);
     }
