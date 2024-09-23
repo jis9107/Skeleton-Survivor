@@ -23,6 +23,11 @@ public class CharacterManager : MonoBehaviour
     {
         //데이터 매니저에서 받아올 값 (레벨, 현재 캐릭터 Id)
         dataManager = GetComponent<DataManager>();
+/*        for(int i = 0; i < charData.Length; i++)
+        {
+            charData[i].level = dataManager.charlevel[i];
+        }*/
+        
         nowCharacterId = 0; // 나중에 받아올 값
         Init(nowCharacterId);
     }
