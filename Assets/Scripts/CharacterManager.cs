@@ -52,7 +52,7 @@ public class CharacterManager : MonoBehaviour
     public void CharacterUpgrade()
     {
         charData[nowCharacterId].level += 1;
-        charData[nowCharacterId].damage = 10;
+        charData[nowCharacterId].damage += 10;
         charData[nowCharacterId].maxHealth += 10;
         Init(nowCharacterId);
     }
