@@ -29856,6 +29856,7 @@ MonoBehaviour:
   isLive: 0
   money: 50
   inGameMoney: 0
+  charDamage: 0
   playerId: 0
   health: 0
   maxHealth: 100
