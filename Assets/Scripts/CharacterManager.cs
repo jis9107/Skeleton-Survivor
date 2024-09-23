@@ -34,6 +34,7 @@ public class CharacterManager : MonoBehaviour
 
     public void OnClickSelectButton()
     {
+        GameManager.instance.charDamage = charData[nowCharacterId].damage;
         GameManager.instance.playerId = charData[nowCharacterId].charId;
         GameManager.instance.maxHealth = charData[nowCharacterId].maxHealth;
     }
@@ -51,7 +52,7 @@ public class CharacterManager : MonoBehaviour
     public void CharacterUpgrade()
     {
         charData[nowCharacterId].level += 1;
-        charData[nowCharacterId].damage += 10;
+        charData[nowCharacterId].damage = 10;
         charData[nowCharacterId].maxHealth += 10;
         Init(nowCharacterId);
     }

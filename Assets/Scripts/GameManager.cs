@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     public bool isLive;
     public int money;
     public int inGameMoney;
+    public float charDamage;
 
     [Header("# Player Info")]
     public int playerId;
