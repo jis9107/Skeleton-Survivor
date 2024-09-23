@@ -6,7 +6,7 @@ public class DataManager : MonoBehaviour
 {
     public int[] charlevels;
     // Manager에 변수들을 저장한다.
-    // 전체적인 데이터 관리 
+    // 전체적인 데이터 관리
     public void Save()
     {
         // 저장 할 변수들
