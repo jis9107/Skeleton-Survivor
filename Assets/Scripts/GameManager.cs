@@ -24,7 +24,6 @@ public class GameManager : MonoBehaviour
     public bool isLive;
     public int money;
     public int inGameMoney;
-    public float charDamage;
 
     [Header("# Player Info")]
     public int playerId;
@@ -34,6 +33,7 @@ public class GameManager : MonoBehaviour
     public int kill;
     public int exp;
     public int[] nextExp;
+    public float charDamage;
 
     private void Awake()
     {
