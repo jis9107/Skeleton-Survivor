@@ -15,6 +15,7 @@ public class CharacterManager : MonoBehaviour
 
     // 추후에 저장 할 데이터
     public int nowCharacterId;
+    public int[] charLevelData;
 
     private void Awake()
     {

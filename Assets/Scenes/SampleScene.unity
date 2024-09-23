@@ -15658,6 +15658,7 @@ MonoBehaviour:
   charDamage: {fileID: 1954789808}
   charHealth: {fileID: 1942795832}
   nowCharacterId: 0
+  charLevelData: 
 --- !u!1 &741967048
 GameObject:
   m_ObjectHideFlags: 0
@@ -29856,7 +29857,6 @@ MonoBehaviour:
   isLive: 0
   money: 50
   inGameMoney: 0
-  charDamage: 0
   playerId: 0
   health: 0
   maxHealth: 100
@@ -29864,6 +29864,7 @@ MonoBehaviour:
   kill: 0
   exp: 0
   nextExp: 03000000050000000a0000003200000078000000c80000002c010000ae01000044020000ee020000
+  charDamage: 0
 --- !u!1 &1462145029
 GameObject:
   m_ObjectHideFlags: 0

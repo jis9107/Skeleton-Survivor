@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
         Application.targetFrameRate = 60;
+        InitMoney();
     }
 
     public void GameStart()
@@ -83,7 +84,6 @@ public class GameManager : MonoBehaviour
 
     IEnumerator GameVictoryRoutine()
     {
-        InitMoney();
         isLive = false;
         enemyCleaner.SetActive(true);
 
@@ -100,6 +100,7 @@ public class GameManager : MonoBehaviour
     public void GameRetry()
     {
         SceneManager.LoadScene(0);
+        InitMoney();
     }
 
     public void GameQuit()
