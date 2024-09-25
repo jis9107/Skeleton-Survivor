@@ -16,14 +16,16 @@ public class CharacterManager : MonoBehaviour
     public Text charHealth;
 
     // 추후에 저장 할 데이터
-    public int nowCharacterId;
+    public int nowCharacterId = 0;
     public int[] charLevelData;
 
     private void Awake()
     {
         //데이터 매니저에서 받아올 값 (레벨, 현재 캐릭터 Id)
         dataManager = GetComponent<DataManager>();
-        Init();
+
+        if (!PlayerPrefs.HasKey("selectCharId"))
+            Init();
         OnSelectCharacter(nowCharacterId);
     }
 
@@ -48,15 +50,25 @@ public class CharacterManager : MonoBehaviour
 
     public void Init()
     {
+        for(int i = 0; i < charData.Length; i++)
+        {
+            charData[i].level = 0;
+            charData[i].damage = charData[i].level * 10;
+            charData[i].maxHealth = charData[i].level * 15;
+        }
+    }
+
+/*    public void Init()
+    {
         nowCharacterId = PlayerPrefs.GetInt("selectCharId");
 
-        for(int i = 0; i < charData.Length; i++)
+        for (int i = 0; i < charData.Length; i++)
         {
             charData[i].level = PlayerPrefs.GetInt($"characterLevel {i}");
             charData[i].damage = charData[i].level * 10;
             charData[i].maxHealth = charData[i].level * 15;
         }
-    }
+    }*/
 
     public void CharacterUpgrade()
     {
