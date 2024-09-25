@@ -17,6 +17,6 @@ MonoBehaviour:
   charName: "\uAE40\uBE14\uB8E8"
   charImage: {fileID: -797862156, guid: 99a24620d31e5ce4e823c32d11e17c2c, type: 3}
   speed: 3
-  damage: 50
-  maxHealth: 500
+  damage: 100
+  maxHealth: 150
   level: 1
