@@ -48,22 +48,23 @@ public class CharacterManager : MonoBehaviour
         GameManager.instance.maxHealth = charData[nowCharacterId].maxHealth;
     }
 
-/*    public void Init()
-    {
-        for(int i = 0; i < charData.Length; i++)
-        {
-            charData[i].level = 0;
-            charData[i].damage = charData[i].level * 10;
-            charData[i].maxHealth = charData[i].level * 15;
-        }
-    }*/
-
     public void Init()
+    {
+        for (int i = 0; i < charData.Length; i++)
+        {
+            charData[i].level = 1;
+            charData[i].damage = charData[i].damage + (charData[i].level * 10);
+            charData[i].maxHealth = charData[i].damage + (charData[i].level * 15);
+        }
+    }
+
+    public void CharDataLoad()
     {
         nowCharacterId = PlayerPrefs.GetInt("selectCharId");
 
         for (int i = 0; i < charData.Length; i++)
         {
+            charData[i].charId = PlayerPrefs.GetInt($"characterID {i}");
             charData[i].level = PlayerPrefs.GetInt($"characterLevel {i}");
             charData[i].damage = charData[i].level * 10;
             charData[i].maxHealth = charData[i].level * 15;
