@@ -1,7 +1,8 @@
 
  저장된 데이터 있다면
 	- PlayerPrefs를 통해 데이터를 받아온다. ( 레벨, 현재 선택된 캐릭터 ID, 모든 캐릭터 ID)
-	- 받아온 데이터를 
+	- 받아온 데이터를 통해 OnSelectCharacter() 함수 실행
 
 없다면 기본 값
 	- CharacterData Item에 저장되어 있는 변수들을 셋팅한다.
+	- OnSelectCharacter() 함수 실행
