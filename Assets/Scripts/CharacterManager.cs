@@ -24,7 +24,7 @@ public class CharacterManager : MonoBehaviour
         //데이터 매니저에서 받아올 값 (레벨, 현재 캐릭터 Id)
         dataManager = GetComponent<DataManager>();
 
-        if (!PlayerPrefs.HasKey("selectCharId"))
+        if (PlayerPrefs.HasKey("selectCharId"))
             Init();
         OnSelectCharacter(nowCharacterId);
     }
@@ -54,7 +54,7 @@ public class CharacterManager : MonoBehaviour
         {
             charData[i].level = 1;
             charData[i].damage = charData[i].damage + (charData[i].level * 10);
-            charData[i].maxHealth = charData[i].damage + (charData[i].level * 15);
+            charData[i].maxHealth = charData[i].maxHealth + (charData[i].level * 15);
         }
     }
 
@@ -66,16 +66,14 @@ public class CharacterManager : MonoBehaviour
         {
             charData[i].charId = PlayerPrefs.GetInt($"characterID {i}");
             charData[i].level = PlayerPrefs.GetInt($"characterLevel {i}");
-            charData[i].damage = charData[i].level * 10;
-            charData[i].maxHealth = charData[i].level * 15;
         }
     }
 
     public void CharacterUpgrade()
     {
-        charData[nowCharacterId].level += 1;
-        charData[nowCharacterId].damage += 10 * (charData[nowCharacterId].level);
-        charData[nowCharacterId].maxHealth += 10 * (charData[nowCharacterId].level);
+        charData[nowCharacterId].level ++;
+        charData[nowCharacterId].damage += 10;
+        charData[nowCharacterId].maxHealth += 10;
         CharDataSave();
         Init();
     }
@@ -84,8 +82,10 @@ public class CharacterManager : MonoBehaviour
     {
         for(int i = 0; i < charData.Length;i++)
         {
-            PlayerPrefs.SetInt($"characterID {i}", charData[i].charId); // 캐릭터 아이디 저장
-            PlayerPrefs.SetInt($"characterLevel {i}", charData[i].level); // 캐릭터 레벨 저장
+            PlayerPrefs.SetInt($"characterID {i}", charData[i].charId); // 캐릭터 아이디 
+            PlayerPrefs.SetInt($"characterLevel {i}", charData[i].level); // 캐릭터 레벨 
+            PlayerPrefs.SetFloat($"charDamage {i}", charData[i].damage); // 캐릭터 데미지
+            PlayerPrefs.SetFloat($"charHealth {i}", charData[i].maxHealth); // 캐릭터 체력
         }
 
         PlayerPrefs.SetInt("selectCharId", nowCharacterId);
