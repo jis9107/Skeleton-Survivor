@@ -26,11 +26,6 @@ public class CharacterManager : MonoBehaviour
         //데이터 매니저에서 받아올 값 (레벨, 현재 캐릭터 Id)
         dataManager = GetComponent<DataManager>();
 
-        if (PlayerPrefs.HasKey("selectCharId"))
-        {
-            CharDataLoad();
-            Apply();
-        }
         OnSelectCharacter(nowCharacterId);
     }
 
@@ -42,8 +37,6 @@ public class CharacterManager : MonoBehaviour
         charLv.text = charData[id].level.ToString();
         charDamage.text = charData[id].damage.ToString();
         charHealth.text = charData[id].maxHealth.ToString();
-
-        CharDataSave();
     }
 
     public void OnClickSelectButton() // 캐릭터 선택 버튼을 눌렀을 시 GamaManager에 변수를 선택 된 캐릭터의 데이터로 변환하는 함수
@@ -53,45 +46,13 @@ public class CharacterManager : MonoBehaviour
         GameManager.instance.maxHealth = charData[nowCharacterId].maxHealth;
     }
 
-    public void Apply()
-    {
-        for (int i = 0; i < charData.Length; i++)
-        {
-            charData[i].damage = charData[i].damage + ((charData[i].level-1) * 10);
-            charData[i].maxHealth = charData[i].maxHealth + ((charData[i].level - 1) * 15);
-        }
-    }
-
-    public void CharDataLoad()
-    {
-        nowCharacterId = PlayerPrefs.GetInt("selectCharId");
-
-        for (int i = 0; i < charData.Length; i++)
-        {
-            charData[i].charId = PlayerPrefs.GetInt($"characterID {i}");
-            charData[i].level = PlayerPrefs.GetInt($"characterLevel {i}");
-        }
-    }
-
     public void CharacterUpgrade()
     {
-        charData[nowCharacterId].level ++;
-        Apply();
-        CharDataSave();
-    }
+        int id = nowCharacterId;
 
-    public void CharDataSave()
-    {
-        for(int i = 0; i < charData.Length;i++)
-        {
-            PlayerPrefs.SetInt($"characterID {i}", charData[i].charId); // 캐릭터 아이디 
-            PlayerPrefs.SetInt($"characterLevel {i}", charData[i].level); // 캐릭터 레벨 
-            PlayerPrefs.SetFloat($"charDamage {i}", charData[i].damage); // 캐릭터 데미지
-            PlayerPrefs.SetFloat($"charHealth {i}", charData[i].maxHealth); // 캐릭터 체력
-        }
-
-        PlayerPrefs.SetInt("selectCharId", nowCharacterId);
-
-        PlayerPrefs.Save();
+        charData[id].level ++;
+        charData[id].damage = charData[id].damage + ((charData[id].level - 1) * 10);
+        charData[id].maxHealth = charData[id].maxHealth + ((charData[id].level - 1) * 15);
+        OnSelectCharacter(id);
     }
 }
