@@ -15,18 +15,22 @@ public class CharacterManager : MonoBehaviour
     public Text charDamage;
     public Text charHealth;
 
-
-
     // 추후에 저장 할 데이터
-    public int nowCharacterId = 0;
+    int nowCharacterId;
 
     private void Awake()
     {
         //데이터 매니저에서 받아올 값 (레벨, 현재 캐릭터 Id)
         dataManager = GetComponent<DataManager>();
 
+        if (!PlayerPrefs.HasKey("SelectCharacter"))
+            Init();
+
+        nowCharacterId = PlayerPrefs.GetInt("SelectCharacter");
+        Debug.Log(nowCharacterId);
         OnSelectCharacter(nowCharacterId);
     }
+
 
     public void OnSelectCharacter(int id)
     {
@@ -53,5 +57,10 @@ public class CharacterManager : MonoBehaviour
         charData[id].damage += 10;
         charData[id].maxHealth += 15;
         OnSelectCharacter(id);
+    }
+
+    private void Init()
+    {
+        PlayerPrefs.SetInt("SelectCharacter", nowCharacterId);
     }
 }

@@ -30,7 +30,6 @@ public class AchiveManager : MonoBehaviour
         {
             Init();
         }
-
     }
 
     void Init()
