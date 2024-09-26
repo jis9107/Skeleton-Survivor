@@ -41,7 +41,6 @@ public class GameManager : MonoBehaviour
 
     public void GameStart()
     {
-        //playerId = id;
         health = maxHealth;
 
         player.gameObject.SetActive(true);

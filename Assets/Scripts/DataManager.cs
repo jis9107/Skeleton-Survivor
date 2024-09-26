@@ -21,7 +21,7 @@ public class DataManager : MonoBehaviour
 
     int totalKill;
     int totalMoney;
-    float totalPlayTime;
+    int totalPlayTime;
 
     private void Awake()
     {
@@ -40,13 +40,13 @@ public class DataManager : MonoBehaviour
     {
         totalMoney += GameManager.instance.inGameMoney;
         totalKill += GameManager.instance.kill;
-        totalPlayTime += GameManager.instance.gameTime;
+        totalPlayTime += (int)GameManager.instance.gameTime;
         curMoney += GameManager.instance.inGameMoney;
         
 
         PlayerPrefs.SetInt("totalKill", totalKill);
         PlayerPrefs.SetInt("totalMoney", totalMoney);
-        PlayerPrefs.SetFloat("totalPlayTime", totalPlayTime);
+        PlayerPrefs.SetInt("totalPlayTime", totalPlayTime);
 
         PlayerPrefs.SetInt("curMoney", curMoney);
     }
@@ -65,7 +65,7 @@ public class DataManager : MonoBehaviour
     {
         PlayerPrefs.SetInt("totalKill", totalKill);
         PlayerPrefs.SetInt("totalMoney", totalMoney);
-        PlayerPrefs.SetFloat("totalPlayTime", totalPlayTime);
+        PlayerPrefs.SetInt("totalPlayTime", totalPlayTime);
         PlayerPrefs.SetInt("curMoney", curMoney);
         PlayerPrefs.SetInt("curLuby", curLuby);
     }
