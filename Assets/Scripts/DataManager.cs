@@ -18,6 +18,10 @@ public class DataManager : MonoBehaviour
     int totalMoney;
     int totalPlayTime;
 
+    private void Awake()
+    {
+        
+    }
 
     public void Save()
     {
@@ -30,5 +34,9 @@ public class DataManager : MonoBehaviour
     public void Load()
     {
 
+    }
+
+    public void InitData()
+    {
     }
 }
