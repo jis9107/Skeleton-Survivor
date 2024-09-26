@@ -19,7 +19,6 @@ public class CharacterManager : MonoBehaviour
 
     // 추후에 저장 할 데이터
     public int nowCharacterId = 0;
-    public int[] charLevelData;
 
     private void Awake()
     {
@@ -39,7 +38,7 @@ public class CharacterManager : MonoBehaviour
         charHealth.text = charData[id].maxHealth.ToString();
     }
 
-    public void OnClickSelectButton() // 캐릭터 선택 버튼을 눌렀을 시 GamaManager에 변수를 선택 된 캐릭터의 데이터로 변환하는 함수
+    public void ApplyCharacter() // 캐릭터 선택 버튼을 눌렀을 시 GamaManager에 변수를 선택 된 캐릭터의 데이터로 변환하는 함수
     {
         GameManager.instance.charDamage = charData[nowCharacterId].damage;
         GameManager.instance.playerId = charData[nowCharacterId].charId;
@@ -51,8 +50,8 @@ public class CharacterManager : MonoBehaviour
         int id = nowCharacterId;
 
         charData[id].level ++;
-        charData[id].damage = charData[id].damage + ((charData[id].level - 1) * 10);
-        charData[id].maxHealth = charData[id].maxHealth + ((charData[id].level - 1) * 15);
+        charData[id].damage += 10;
+        charData[id].maxHealth += 15;
         OnSelectCharacter(id);
     }
 }
