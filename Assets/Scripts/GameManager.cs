@@ -15,14 +15,12 @@ public class GameManager : MonoBehaviour
     public Result uiResult;
     public GameObject enemyCleaner;
     public Transform uiJoyStick;
-    public Text moneyText;
     public Text inGameMoneyText;
 
     [Header("# Game Control")]
     public float gameTime;
     public float maxGameTime = 2 * 10f;
     public bool isLive;
-    public int money;
     public int inGameMoney;
 
     [Header("# Player Info")]
@@ -57,13 +55,11 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        InitMoney();
         StartCoroutine(GameOverRoutine());
     }
 
     IEnumerator GameOverRoutine()
     {
-        InitMoney();
         isLive = false;
         
         yield return new WaitForSeconds(0.5f);
@@ -99,7 +95,6 @@ public class GameManager : MonoBehaviour
     public void GameRetry()
     {
         SceneManager.LoadScene(0);
-        InitMoney();
     }
 
     public void GameQuit()
@@ -137,12 +132,6 @@ public class GameManager : MonoBehaviour
     public void GetInGameMoney(int getMoney)
     {
         inGameMoney += getMoney;
-    }
-
-    public void InitMoney()
-    {
-        money += inGameMoney;
-        moneyText.text = money.ToString();
     }
 
     public void Stop()

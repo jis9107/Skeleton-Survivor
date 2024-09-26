@@ -27,7 +27,7 @@ public class InGameItem : MonoBehaviour
                 break;
 
             case Type.coin:
-                GameManager.instance.GetInGameMoney(1000);
+                GameManager.instance.GetInGameMoney(50);
                 this.gameObject.SetActive(false);
                 break;
 

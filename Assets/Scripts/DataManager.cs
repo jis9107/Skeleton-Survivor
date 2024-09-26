@@ -9,6 +9,8 @@ public class DataManager : MonoBehaviour
     public Text totalKillText;
     public Text totalmoneyText;
     public Text totalPlayTimeText;
+    public Text curMoneyText;
+    public Text curLubyText;
 
     [Header("# GameData")]
     public int curMoney;
@@ -16,21 +18,25 @@ public class DataManager : MonoBehaviour
 
     int totalKill;
     int totalMoney;
-    int totalPlayTime;
+    float totalPlayTime;
 
     private void Awake()
     {
         if (!PlayerPrefs.HasKey("totalKill"))
-            Save();
+            Init();
         Load();
     }
 
 
     public void Save()
     {
+        totalMoney += GameManager.instance.inGameMoney;
+        totalKill += GameManager.instance.kill;
+        totalPlayTime += GameManager.instance.gameTime;
+
         PlayerPrefs.SetInt("totalKill", totalKill);
         PlayerPrefs.SetInt("totalMoney", totalMoney);
-        PlayerPrefs.SetInt("totalPlayTime", totalPlayTime);
+        PlayerPrefs.SetFloat("totalPlayTime", totalPlayTime);
     }
 
     public void Load()
@@ -38,6 +44,13 @@ public class DataManager : MonoBehaviour
         totalKill = PlayerPrefs.GetInt("totalKill");
         totalMoney = PlayerPrefs.GetInt("totalMoney");
         totalPlayTime = PlayerPrefs.GetInt("totalPlayTime");
+    }
+
+    void Init()
+    {
+        PlayerPrefs.SetInt("totalKill", totalKill);
+        PlayerPrefs.SetInt("totalMoney", totalMoney);
+        PlayerPrefs.SetFloat("totalPlayTime", totalPlayTime);
     }
 
 }
