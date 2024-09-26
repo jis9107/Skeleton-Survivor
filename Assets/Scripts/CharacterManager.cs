@@ -15,9 +15,13 @@ public class CharacterManager : MonoBehaviour
     public Text charDamage;
     public Text charHealth;
 
+
+
     // 추후에 저장 할 데이터
     public int nowCharacterId = 0;
     public int[] charLevelData;
+    public int[] charDamageData;
+    public int[] charHealthData;
 
     private void Awake()
     {
@@ -25,7 +29,7 @@ public class CharacterManager : MonoBehaviour
         dataManager = GetComponent<DataManager>();
 
         if (PlayerPrefs.HasKey("selectCharId"))
-            Init();
+            CharDataLoad();
         OnSelectCharacter(nowCharacterId);
     }
 
@@ -48,13 +52,13 @@ public class CharacterManager : MonoBehaviour
         GameManager.instance.maxHealth = charData[nowCharacterId].maxHealth;
     }
 
-    public void Init()
+    public void Apply()
     {
         for (int i = 0; i < charData.Length; i++)
         {
             charData[i].level = 1;
-            charData[i].damage = charData[i].damage + (charData[i].level * 10);
-            charData[i].maxHealth = charData[i].maxHealth + (charData[i].level * 15);
+            charData[i].damage = charData[i].damage + ((charData[i].level-1) * 10);
+            charData[i].maxHealth = charData[i].maxHealth + ((charData[i].level - 1) * 15);
         }
     }
 
@@ -75,7 +79,6 @@ public class CharacterManager : MonoBehaviour
         charData[nowCharacterId].damage += 10;
         charData[nowCharacterId].maxHealth += 10;
         CharDataSave();
-        Init();
     }
 
     public void CharDataSave()
