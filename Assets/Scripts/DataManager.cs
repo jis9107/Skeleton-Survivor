@@ -28,6 +28,10 @@ public class DataManager : MonoBehaviour
         if (!PlayerPrefs.HasKey("totalKill"))
             Init();
         Load();
+    }
+
+    private void Start()
+    {
         ApplyText();
     }
 

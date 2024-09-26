@@ -94,9 +94,6 @@ public class GameManager : MonoBehaviour
 
     public void GameRetry()
     {
-        DataManager dataManager = GetComponent<DataManager>();
-        dataManager.Save();
-
         SceneManager.LoadScene(0);
     }
 
