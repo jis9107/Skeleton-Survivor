@@ -26,6 +26,10 @@ public class CharacterManager : MonoBehaviour
         if (!PlayerPrefs.HasKey("SelectCharacter"))
             Init();
 
+    }
+
+    private void Start()
+    {
         nowCharacterId = PlayerPrefs.GetInt("SelectCharacter");
         Debug.Log(nowCharacterId);
         OnSelectCharacter(nowCharacterId);
@@ -40,10 +44,13 @@ public class CharacterManager : MonoBehaviour
         charLv.text = charData[id].level.ToString();
         charDamage.text = charData[id].damage.ToString();
         charHealth.text = charData[id].maxHealth.ToString();
+
     }
 
     public void ApplyCharacter() // 캐릭터 선택 버튼을 눌렀을 시 GamaManager에 변수를 선택 된 캐릭터의 데이터로 변환하는 함수
     {
+        Init();
+
         GameManager.instance.charDamage = charData[nowCharacterId].damage;
         GameManager.instance.playerId = charData[nowCharacterId].charId;
         GameManager.instance.maxHealth = charData[nowCharacterId].maxHealth;
@@ -62,5 +69,7 @@ public class CharacterManager : MonoBehaviour
     private void Init()
     {
         PlayerPrefs.SetInt("SelectCharacter", nowCharacterId);
+
+        PlayerPrefs.Save();
     }
 }
