@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance = null; // 어느 스크립트에서도 접근하기 쉽게 인스터스화
+    public static GameManager instance; // 어느 스크립트에서도 접근하기 쉽게 인스터스화
 
     [Header("# Game Object")]
     public PoolManager pool;
@@ -37,13 +37,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if(instance == null)
-        {
-            instance = this;
-
-            DontDestroyOnLoad(gameObject);
-
-        }
+        instance = this;
         Application.targetFrameRate = 60;
     }
 
