@@ -20,23 +20,24 @@ public class DataManager : MonoBehaviour
 
     private void Awake()
     {
-        
+        if (!PlayerPrefs.HasKey("totalKill"))
+            Save();
+        Load();
     }
+
 
     public void Save()
     {
-        // 저장 할 변수들
-        // 2. 스테이지
-        // 3. 업적
-        // 4. 돈, 보석
+        PlayerPrefs.SetInt("totalKill", totalKill);
+        PlayerPrefs.SetInt("totalMoney", totalMoney);
+        PlayerPrefs.SetInt("totalPlayTime", totalPlayTime);
     }
 
     public void Load()
     {
-
+        totalKill = PlayerPrefs.GetInt("totalKill");
+        totalMoney = PlayerPrefs.GetInt("totalMoney");
+        totalPlayTime = PlayerPrefs.GetInt("totalPlayTime");
     }
 
-    public void InitData()
-    {
-    }
 }
