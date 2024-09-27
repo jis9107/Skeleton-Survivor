@@ -84,18 +84,18 @@ public class DataManager : MonoBehaviour
 
     public void ApplyText()
     {
-        totalKillText.text = totalKill.ToString();
-        totalMoneyText.text = totalMoney.ToString();
-        totalPlayTimeText.text = totalPlayTime.ToString();
+        totalKillText.text = string.Format("현재 누적킬 수 : {0}", totalKill);
+        totalMoneyText.text = string.Format("현재 누적 머니 : {0}", totalMoney);
+        totalPlayTimeText.text = string.Format("현재 플레이 타임 : {0}", totalPlayTime);
         curMoneyText.text = curMoney.ToString();
         curLubyText.text = curLuby.ToString();
     }
 
     public void MissionApplyText()
     {
-        killMissionText.text = string.Format("현재 누적킬 수 : {0}", totalKill);
-        moneyMissionText.text = string.Format("현재 누적 머니 : {0}", totalMoney);
-        timeMossionText.text = string.Format("현재 플레이 타임 : {0}", totalPlayTime);
+        killMissionText.text = string.Format("킬 {0}달성하기", missionkill);
+        moneyMissionText.text = string.Format("누적 머니 {0}달성하기", missionMoney);
+        timeMossionText.text = string.Format("플레이 타임 {0}달성하기", missionTime);
     }
 
 }
