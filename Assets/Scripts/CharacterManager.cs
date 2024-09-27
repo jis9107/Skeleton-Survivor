@@ -6,21 +6,21 @@ using UnityEngine.UI;
 public class CharacterManager : MonoBehaviour
 {
     public CharacterData[] charData;
-
-    DataManager dataManager;
+    public DataManager dataManager;
 
     public Image icon;
     public Text charName;
     public Text charLv;
     public Text charDamage;
     public Text charHealth;
+    public Text levelUpPriceText;
 
     // 추후에 저장 할 데이터
     int nowCharacterId;
+    int levelUpPirce;
 
     private void Awake()
     {
-        //데이터 매니저에서 받아올 값 (레벨, 현재 캐릭터 Id)
         dataManager = GetComponent<DataManager>();
 
         if (!PlayerPrefs.HasKey("SelectCharacter"))
@@ -39,11 +39,13 @@ public class CharacterManager : MonoBehaviour
     public void OnSelectCharacter(int id)
     {
         nowCharacterId = id;
+        levelUpPirce = charData[id].level * 200;
         icon.sprite = charData[id].charImage;
         charName.text = charData[id].charName;
         charLv.text = charData[id].level.ToString();
         charDamage.text = charData[id].damage.ToString();
         charHealth.text = charData[id].maxHealth.ToString();
+        levelUpPriceText.text = levelUpPirce.ToString();
 
     }
 
@@ -58,12 +60,19 @@ public class CharacterManager : MonoBehaviour
 
     public void CharacterUpgrade()
     {
+
+        if (dataManager.curMoney < levelUpPirce)
+            return;
+
         int id = nowCharacterId;
 
-        charData[id].level ++;
+        charData[id].level++;
         charData[id].damage += 10;
         charData[id].maxHealth += 15;
         OnSelectCharacter(id);
+
+        dataManager.curMoney -= levelUpPirce;
+
     }
 
     private void Init()

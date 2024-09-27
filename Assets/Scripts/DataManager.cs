@@ -49,6 +49,8 @@ public class DataManager : MonoBehaviour
         PlayerPrefs.SetInt("totalPlayTime", totalPlayTime);
 
         PlayerPrefs.SetInt("curMoney", curMoney);
+
+        PlayerPrefs.Save();
     }
 
     public void Load()
@@ -68,6 +70,8 @@ public class DataManager : MonoBehaviour
         PlayerPrefs.SetInt("totalPlayTime", totalPlayTime);
         PlayerPrefs.SetInt("curMoney", curMoney);
         PlayerPrefs.SetInt("curLuby", curLuby);
+
+        PlayerPrefs.Save();
     }
 
     void ApplyText()
