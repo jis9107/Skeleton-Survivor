@@ -2220,7 +2220,7 @@ MonoBehaviour:
   totalPlayTimeText: {fileID: 265179047}
   curMoneyText: {fileID: 1104248969}
   curLubyText: {fileID: 1985107825}
-  curMoney: 0
+  curMoney: 1000
   curLuby: 0
 --- !u!1 &285668584
 GameObject:
@@ -2998,6 +2998,18 @@ MonoBehaviour:
       - m_Target: {fileID: 737038553}
         m_TargetAssemblyTypeName: CharacterManager, Assembly-CSharp
         m_MethodName: CharacterUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 270290903}
+        m_TargetAssemblyTypeName: DataManager, Assembly-CSharp
+        m_MethodName: ApplyText
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

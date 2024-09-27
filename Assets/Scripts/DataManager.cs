@@ -73,7 +73,7 @@ public class DataManager : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    void ApplyText()
+    public void ApplyText()
     {
         totalKillText.text = totalKill.ToString();
         totalMoneyText.text = totalMoney.ToString();

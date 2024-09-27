@@ -81,9 +81,9 @@ public class CharacterManager : MonoBehaviour
         charData[id].level++;
         charData[id].damage += 10;
         charData[id].maxHealth += 15;
+        dataManager.curMoney -= levelUpPirce;
         OnSelectCharacter(id);
 
-        dataManager.curMoney -= levelUpPirce;
 
     }
 
