@@ -15689,7 +15689,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d7bc8f88f0c6fbb4b8377df0372576b5, type: 2}
   - {fileID: 11400000, guid: 1b925106b9d3fc649bca5499c64e47b3, type: 2}
   - {fileID: 11400000, guid: c39d44b6319e3b74ca2b64f3fd561e33, type: 2}
-  dataManager: {fileID: 270290903}
+  data: {fileID: 270290901}
   icon: {fileID: 944004412}
   charName: {fileID: 1994908813}
   charLv: {fileID: 1319272808}

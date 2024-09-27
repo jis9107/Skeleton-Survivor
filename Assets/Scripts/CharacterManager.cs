@@ -15,6 +15,8 @@ public class CharacterManager : MonoBehaviour
     public Text charHealth;
     public Text levelUpPriceText;
 
+    DataManager dataManager;
+
     // 추후에 저장 할 데이터
     int nowCharacterId;
     int levelUpPirce;
@@ -28,6 +30,8 @@ public class CharacterManager : MonoBehaviour
 
     private void Start()
     {
+        dataManager = data.GetComponent<DataManager>();
+
         nowCharacterId = PlayerPrefs.GetInt("SelectCharacter");
         Debug.Log(nowCharacterId);
         OnSelectCharacter(nowCharacterId);
@@ -45,6 +49,14 @@ public class CharacterManager : MonoBehaviour
         charDamage.text = charData[id].damage.ToString();
         charHealth.text = charData[id].maxHealth.ToString();
         levelUpPriceText.text = levelUpPirce.ToString();
+        if(dataManager.curMoney < levelUpPirce)
+        {
+            levelUpPriceText.color = Color.red;
+        }
+        else
+        {
+            levelUpPriceText.color = Color.white;
+        }
 
     }
 
@@ -59,7 +71,6 @@ public class CharacterManager : MonoBehaviour
 
     public void CharacterUpgrade()
     {
-        DataManager dataManager = data.GetComponent<DataManager>();
         int money = dataManager.curMoney;
 
         if (money < levelUpPirce)
@@ -72,7 +83,7 @@ public class CharacterManager : MonoBehaviour
         charData[id].maxHealth += 15;
         OnSelectCharacter(id);
 
-        data.GetComponent<DataManager>().curMoney -= levelUpPirce;
+        dataManager.curMoney -= levelUpPirce;
 
     }
 
