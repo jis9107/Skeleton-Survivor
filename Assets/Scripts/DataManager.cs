@@ -12,10 +12,14 @@ public class DataManager : MonoBehaviour
     public Text curMoneyText;
     public Text curLubyText;
 
+    [Header("# MissionText")]
+    public Text killMissionText;
+    public Text moneyMissionText;
+    public Text timeMossionText;
+
+    [Header("# inGame")]
     public int curMoney;
     public int curLuby;
-
-    [Header("# Achive")]
 
 
     int totalKill;
