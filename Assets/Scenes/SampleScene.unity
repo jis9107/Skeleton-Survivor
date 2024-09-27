@@ -2386,14 +2386,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalKillText: {fileID: 1362753524}
-  totalMoneyText: {fileID: 1104248969}
-  totalPlayTimeText: {fileID: 265179047}
+  totalMoneyText: {fileID: 166440526}
+  totalPlayTimeText: {fileID: 1589786285}
   curMoneyText: {fileID: 1104248969}
   curLubyText: {fileID: 1985107825}
-  killMissionText: {fileID: 0}
-  moneyMissionText: {fileID: 0}
-  timeMossionText: {fileID: 0}
-  curMoney: 1000
+  killMissionText: {fileID: 1558086852}
+  moneyMissionText: {fileID: 1044887618}
+  timeMossionText: {fileID: 1852813437}
+  curMoney: 0
   curLuby: 0
 --- !u!1 &285668584
 GameObject:

@@ -86,4 +86,11 @@ public class DataManager : MonoBehaviour
         curLubyText.text = curLuby.ToString();
     }
 
+    public void MissionApplyText()
+    {
+        killMissionText.text = "";
+        moneyMissionText.text = "";
+        timeMossionText.text = "";
+    }
+
 }
