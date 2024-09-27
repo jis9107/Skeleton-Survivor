@@ -40,6 +40,7 @@ public class DataManager : MonoBehaviour
     private void Start()
     {
         ApplyText();
+        MissionApplyText();
     }
 
 
