@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CharacterManager : MonoBehaviour
 {
     public CharacterData[] charData;
-    public DataManager dataManager;
+    public GameObject data;
 
     public Image icon;
     public Text charName;
@@ -21,18 +21,17 @@ public class CharacterManager : MonoBehaviour
 
     private void Awake()
     {
-        dataManager = GetComponent<DataManager>();
-
         if (!PlayerPrefs.HasKey("SelectCharacter"))
             Init();
-
     }
+
 
     private void Start()
     {
         nowCharacterId = PlayerPrefs.GetInt("SelectCharacter");
         Debug.Log(nowCharacterId);
         OnSelectCharacter(nowCharacterId);
+        
     }
 
 
@@ -60,8 +59,10 @@ public class CharacterManager : MonoBehaviour
 
     public void CharacterUpgrade()
     {
+        DataManager dataManager = data.GetComponent<DataManager>();
+        int money = dataManager.curMoney;
 
-        if (dataManager.curMoney < levelUpPirce)
+        if (money < levelUpPirce)
             return;
 
         int id = nowCharacterId;
@@ -71,7 +72,7 @@ public class CharacterManager : MonoBehaviour
         charData[id].maxHealth += 15;
         OnSelectCharacter(id);
 
-        dataManager.curMoney -= levelUpPirce;
+        data.GetComponent<DataManager>().curMoney -= levelUpPirce;
 
     }
 

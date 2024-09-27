@@ -12,7 +12,6 @@ public class DataManager : MonoBehaviour
     public Text curMoneyText;
     public Text curLubyText;
 
-    [Header("# GameData")]
     public int curMoney;
     public int curLuby;
 
