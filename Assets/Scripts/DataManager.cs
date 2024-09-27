@@ -92,9 +92,9 @@ public class DataManager : MonoBehaviour
 
     public void MissionApplyText()
     {
-        killMissionText.text = "";
-        moneyMissionText.text = "";
-        timeMossionText.text = "";
+        killMissionText.text = string.Format("현재 누적킬 수 : {0}", totalKill);
+        moneyMissionText.text = string.Format("현재 누적 머니 : {0}", totalMoney);
+        timeMossionText.text = string.Format("현재 플레이 타임 : {0}", totalPlayTime);
     }
 
 }
