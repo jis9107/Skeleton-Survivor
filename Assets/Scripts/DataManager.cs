@@ -21,14 +21,15 @@ public class DataManager : MonoBehaviour
     public int curMoney;
     public int curLuby;
 
+    [Header("# Mission")]
+    public int missionkill;
+    public int missionMoney;
+    public int missionTime;
 
     int totalKill;
     int totalMoney;
     int totalPlayTime;
 
-    int missionkill;
-    int missionMoney;
-    int missionTime;
 
     private void Awake()
     {
@@ -95,7 +96,7 @@ public class DataManager : MonoBehaviour
     {
         killMissionText.text = string.Format("킬 {0}달성하기", missionkill);
         moneyMissionText.text = string.Format("누적 머니 {0}달성하기", missionMoney);
-        timeMossionText.text = string.Format("플레이 타임 {0}달성하기", missionTime);
+        timeMossionText.text = string.Format("플레이 타임 {0}초 달성하기", missionTime);
     }
 
 }
