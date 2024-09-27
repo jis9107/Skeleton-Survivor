@@ -26,6 +26,10 @@ public class DataManager : MonoBehaviour
     int totalMoney;
     int totalPlayTime;
 
+    int missionkill;
+    int missionMoney;
+    int missionTime;
+
     private void Awake()
     {
         if (!PlayerPrefs.HasKey("totalKill"))
