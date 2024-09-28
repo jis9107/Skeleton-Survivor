@@ -165,12 +165,31 @@ public class AchiveManager : MonoBehaviour
         {
             PlayerPrefs.SetInt(missionAchive.ToString(), 1);
         }
+
+        else
+        {
+            PlayerPrefs.SetInt(missionAchive.ToString(), 0);
+        }
     }
 
     
-    public void Reward() // 업적 달성 후 보상 받기 클릭 시
+    public void Reward(string missionName) // 업적 달성 후 보상 받기 클릭 시
     {
+        switch (missionName)
+        {
+            case "kill":
+                data.curMoney += data.missionkill;
+                data.missionkill *= 2;
+                break;
+        }
 
+        foreach (MissionAchive missionAchive in missionAchives)
+        {
+            CheckMission(missionAchive);
+        }
+
+        UnLockMissionReward();
+        data.MissionApplyText();
     }
 
 
