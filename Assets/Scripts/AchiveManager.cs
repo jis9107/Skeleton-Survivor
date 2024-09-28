@@ -102,6 +102,11 @@ public class AchiveManager : MonoBehaviour
         {
             CheckAchive(achive);
         }
+
+        foreach ( MissionAchive missionAchive in missionAchives)
+        {
+            CheckMission(missionAchive);
+        }
     }
 
     void CheckAchive(Achive achive)
@@ -133,6 +138,40 @@ public class AchiveManager : MonoBehaviour
             StartCoroutine(NoticeRoutine());
         }
     }
+
+    void CheckMission(MissionAchive missionAchive)
+    {
+        bool isAchive = false;
+
+        switch (missionAchive)
+        {
+            case MissionAchive.KillAhcive:
+                isAchive = data.missionkill >= data.totalKill;
+                break;
+
+            case MissionAchive.TimeAchive:
+                isAchive = data.missionTime >= data.totalPlayTime;
+                break;
+
+            case MissionAchive.MoneyAchive:
+                isAchive = data.missionMoney >= data.totalMoney;
+                break;
+        }
+
+        // isAchive가 true 상태이고 PlayerPrefs 에 achive가 0일 때 (해금이 안되어 있을 때)
+        if (isAchive && PlayerPrefs.GetInt(missionAchive.ToString()) == 0)
+        {
+            PlayerPrefs.SetInt(missionAchive.ToString(), 1);
+        }
+    }
+
+    
+    public void Reward() // 업적 달성 후 보상 받기 클릭 시
+    {
+
+    }
+
+
 
     IEnumerator NoticeRoutine()
     {
