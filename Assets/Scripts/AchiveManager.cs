@@ -15,11 +15,20 @@ public class AchiveManager : MonoBehaviour
     public GameObject uiNotice;
     
 
-    enum Achive //업적들
+    enum Achive //캐릭터 해금 업적들
     {
         UnLockChar_2,
         UnLockChar_3,
     }
+
+    enum MissionAchive // 미션 달성 업적들
+    {
+        KillAhcive,
+        TimeAchive,
+        MoneyAchive
+    }
+
+    MissionAchive[] missionAchives; // 미션 달성 업적 저장소
     Achive[] achives; // 저장소
     // Coroutine을 사용할 때 메모리 낭비를 방지하기 위해 미리 선언 (메모리 최적화)
     // TimeScale의 영향을 받지 않게 하기 위해서 Realtime 사용
@@ -29,6 +38,8 @@ public class AchiveManager : MonoBehaviour
     private void Awake()
     {
         achives = (Achive[])Enum.GetValues(typeof(Achive)); // enum 타입 값을 가져온다.
+        missionAchives = (MissionAchive[])Enum.GetValues(typeof(MissionAchive));
+
         wait = new WaitForSecondsRealtime(5);
         if (!PlayerPrefs.HasKey("MyData")) //PlayerPrefs에 데이터가 없으면 초기화
         {
@@ -43,6 +54,11 @@ public class AchiveManager : MonoBehaviour
         foreach (Achive achive in achives)
         {
             PlayerPrefs.SetInt(achive.ToString(), 0);
+        }
+
+        foreach (MissionAchive missionAchive in missionAchives)
+        {
+            PlayerPrefs.SetInt(missionAchive.ToString(), 0);
         }
 
     }
