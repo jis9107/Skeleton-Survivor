@@ -8525,8 +8525,10 @@ MonoBehaviour:
   unlockCharacter:
   - {fileID: 2053381542}
   - {fileID: 666341411}
-  lockReward: []
-  unLockReward: []
+  lockReward:
+  - {fileID: 748479025}
+  unLockReward:
+  - {fileID: 1591884869}
   uiNotice: {fileID: 1094439571}
 --- !u!1 &519420028
 GameObject:
@@ -14954,7 +14956,7 @@ GameObject:
   - component: {fileID: 697920569}
   - component: {fileID: 697920568}
   m_Layer: 5
-  m_Name: Reward (Lock)
+  m_Name: Money Reward (Lock)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20074,7 +20076,7 @@ GameObject:
   - component: {fileID: 748479028}
   - component: {fileID: 748479027}
   m_Layer: 5
-  m_Name: Reward (Lock)
+  m_Name: KillReward (Lock)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22956,7 +22958,7 @@ GameObject:
   - component: {fileID: 1120844473}
   - component: {fileID: 1120844472}
   m_Layer: 5
-  m_Name: Reward
+  m_Name: Money Reward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31202,7 +31204,7 @@ GameObject:
   - component: {fileID: 1575490476}
   - component: {fileID: 1575490475}
   m_Layer: 5
-  m_Name: Reward (Lock)
+  m_Name: TimeReward (Lock)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31277,7 +31279,7 @@ GameObject:
   - component: {fileID: 1584258590}
   - component: {fileID: 1584258589}
   m_Layer: 5
-  m_Name: Reward
+  m_Name: TimeReward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31447,7 +31449,7 @@ GameObject:
   - component: {fileID: 1591884872}
   - component: {fileID: 1591884871}
   m_Layer: 5
-  m_Name: Reward
+  m_Name: KillReward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

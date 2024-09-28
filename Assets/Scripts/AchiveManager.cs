@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class AchiveManager : MonoBehaviour
 {
+    public GameObject dataManager;
+
     public GameObject[] lockCharacter;
     public GameObject[] unlockCharacter;
 
@@ -13,6 +15,8 @@ public class AchiveManager : MonoBehaviour
     public GameObject[] unLockReward;
 
     public GameObject uiNotice;
+
+    DataManager data;
     
 
     enum Achive //캐릭터 해금 업적들
@@ -37,6 +41,8 @@ public class AchiveManager : MonoBehaviour
 
     private void Awake()
     {
+        data = dataManager.GetComponent<DataManager>();
+
         achives = (Achive[])Enum.GetValues(typeof(Achive)); // enum 타입 값을 가져온다.
         missionAchives = (MissionAchive[])Enum.GetValues(typeof(MissionAchive));
 
@@ -76,6 +82,17 @@ public class AchiveManager : MonoBehaviour
             bool isUnlock = PlayerPrefs.GetInt(achiveName) == 1;
             lockCharacter[i].SetActive(!isUnlock);
             unlockCharacter[i].SetActive(isUnlock);
+        }
+    }
+
+    void UnLockMissionReward()
+    {
+        for(int i = 0; i < lockReward.Length; i++)
+        {
+            string rewardName = missionAchives[i].ToString();
+            bool isUnLock = PlayerPrefs.GetInt(rewardName) == 1;
+            lockReward[i].SetActive(!isUnLock);
+            unLockReward[i].SetActive(isUnLock);
         }
     }
 
