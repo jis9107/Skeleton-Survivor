@@ -94,8 +94,8 @@ public class DataManager : MonoBehaviour
 
     public void MissionApplyText()
     {
-        killMissionText.text = string.Format("킬 {0}달성하기", missionkill);
-        moneyMissionText.text = string.Format("누적 머니 {0}달성하기", missionMoney);
+        killMissionText.text = string.Format("누적 킬 {0}킬 달성하기", missionkill);
+        moneyMissionText.text = string.Format("누적 머니 {0} 달성하기", missionMoney);
         timeMossionText.text = string.Format("플레이 타임 {0}초 달성하기", missionTime);
     }
 
