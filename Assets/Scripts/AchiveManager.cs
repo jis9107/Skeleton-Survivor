@@ -72,6 +72,13 @@ public class AchiveManager : MonoBehaviour
     private void Start()
     {
         UnlockCharacter();
+
+        foreach (MissionAchive missionAchive in missionAchives)
+        {
+            CheckMission(missionAchive);
+        }
+
+        UnLockMissionReward();
     }
 
     void UnlockCharacter()
@@ -101,11 +108,6 @@ public class AchiveManager : MonoBehaviour
         foreach (Achive achive in achives)
         {
             CheckAchive(achive);
-        }
-
-        foreach ( MissionAchive missionAchive in missionAchives)
-        {
-            CheckMission(missionAchive);
         }
     }
 

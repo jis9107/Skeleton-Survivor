@@ -2223,7 +2223,7 @@ MonoBehaviour:
   killMissionText: {fileID: 1558086852}
   moneyMissionText: {fileID: 1044887618}
   timeMossionText: {fileID: 1852813437}
-  missionkill: 200
+  missionkill: 10
   missionMoney: 5000
   missionTime: 500
   curMoney: 0
@@ -8519,6 +8519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ce1d7bfe6bf2e94880b284055fcf51a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dataManager: {fileID: 270290901}
   lockCharacter:
   - {fileID: 408752874}
   - {fileID: 726165689}
@@ -20330,7 +20331,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &776704338
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22273,7 +22274,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1073172500
 RectTransform:
   m_ObjectHideFlags: 0
