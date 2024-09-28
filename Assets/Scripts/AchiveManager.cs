@@ -14,7 +14,7 @@ public class AchiveManager : MonoBehaviour
     enum Achive //업적들
     {
         UnLockPotato,
-        UnLickBean,
+        UnLockBean,
     }
     Achive[] achives; // 저장소
     // Coroutine을 사용할 때 메모리 낭비를 방지하기 위해 미리 선언 (메모리 최적화)
@@ -79,7 +79,7 @@ public class AchiveManager : MonoBehaviour
                 isAchive = GameManager.instance.kill >= 10;
                 break;
 
-            case Achive.UnLickBean:
+            case Achive.UnLockBean:
                 isAchive = GameManager.instance.gameTime == GameManager.instance.maxGameTime;
                 break;
         }
