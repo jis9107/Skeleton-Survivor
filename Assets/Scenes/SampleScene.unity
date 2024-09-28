@@ -2223,11 +2223,14 @@ MonoBehaviour:
   killMissionText: {fileID: 1558086852}
   moneyMissionText: {fileID: 1044887618}
   timeMossionText: {fileID: 1852813437}
-  curMoney: 0
-  curLuby: 0
   missionkill: 200
   missionMoney: 5000
   missionTime: 500
+  curMoney: 0
+  curLuby: 0
+  totalKill: 0
+  totalMoney: 0
+  totalPlayTime: 0
 --- !u!1 &285668584
 GameObject:
   m_ObjectHideFlags: 0
@@ -8522,6 +8525,8 @@ MonoBehaviour:
   unlockCharacter:
   - {fileID: 2053381542}
   - {fileID: 666341411}
+  lockReward: []
+  unLockReward: []
   uiNotice: {fileID: 1094439571}
 --- !u!1 &519420028
 GameObject:
@@ -14760,29 +14765,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 149416957}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 737038553}
+        m_TargetAssemblyTypeName: CharacterManager, Assembly-CSharp
+        m_MethodName: OnSelectCharacter
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1343240205}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &666341414
 MonoBehaviour:
@@ -14961,7 +14954,7 @@ GameObject:
   - component: {fileID: 697920569}
   - component: {fileID: 697920568}
   m_Layer: 5
-  m_Name: Ahcive X
+  m_Name: Reward (Lock)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20081,7 +20074,7 @@ GameObject:
   - component: {fileID: 748479028}
   - component: {fileID: 748479027}
   m_Layer: 5
-  m_Name: Ahcive X
+  m_Name: Reward (Lock)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20335,7 +20328,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &776704338
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22278,7 +22271,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1073172500
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22963,7 +22956,7 @@ GameObject:
   - component: {fileID: 1120844473}
   - component: {fileID: 1120844472}
   m_Layer: 5
-  m_Name: Ahcive
+  m_Name: Reward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31209,7 +31202,7 @@ GameObject:
   - component: {fileID: 1575490476}
   - component: {fileID: 1575490475}
   m_Layer: 5
-  m_Name: Ahcive X
+  m_Name: Reward (Lock)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31284,7 +31277,7 @@ GameObject:
   - component: {fileID: 1584258590}
   - component: {fileID: 1584258589}
   m_Layer: 5
-  m_Name: Ahcive
+  m_Name: Reward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31454,7 +31447,7 @@ GameObject:
   - component: {fileID: 1591884872}
   - component: {fileID: 1591884871}
   m_Layer: 5
-  m_Name: Ahcive
+  m_Name: Reward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34330,29 +34323,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 149416957}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 737038553}
+        m_TargetAssemblyTypeName: CharacterManager, Assembly-CSharp
+        m_MethodName: OnSelectCharacter
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1343240205}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &2053381545
 MonoBehaviour:

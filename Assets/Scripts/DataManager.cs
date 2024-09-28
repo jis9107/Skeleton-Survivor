@@ -17,18 +17,18 @@ public class DataManager : MonoBehaviour
     public Text moneyMissionText;
     public Text timeMossionText;
 
-    [Header("# inGame")]
-    public int curMoney;
-    public int curLuby;
-
     [Header("# Mission")]
     public int missionkill;
     public int missionMoney;
     public int missionTime;
 
-    int totalKill;
-    int totalMoney;
-    int totalPlayTime;
+    [Header("# inGame")]
+    public int curMoney;
+    public int curLuby;
+    public int totalKill;
+    public int totalMoney;
+    public int totalPlayTime;
+
 
 
     private void Awake()

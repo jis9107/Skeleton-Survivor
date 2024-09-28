@@ -8,13 +8,17 @@ public class AchiveManager : MonoBehaviour
 {
     public GameObject[] lockCharacter;
     public GameObject[] unlockCharacter;
+
+    public GameObject[] lockReward;
+    public GameObject[] unLockReward;
+
     public GameObject uiNotice;
     
 
     enum Achive //업적들
     {
-        UnLockPotato,
-        UnLockBean,
+        UnLockChar_2,
+        UnLockChar_3,
     }
     Achive[] achives; // 저장소
     // Coroutine을 사용할 때 메모리 낭비를 방지하기 위해 미리 선언 (메모리 최적화)
@@ -40,9 +44,7 @@ public class AchiveManager : MonoBehaviour
         {
             PlayerPrefs.SetInt(achive.ToString(), 0);
         }
-/*      
-        PlayerPrefs.SetInt("UnLockPotato", 0);
-        PlayerPrefs.SetInt("UnLockBean", 0);*/
+
     }
 
     private void Start()
@@ -75,11 +77,11 @@ public class AchiveManager : MonoBehaviour
 
         switch (achive)
         {
-            case Achive.UnLockPotato:
-                isAchive = GameManager.instance.kill >= 10;
+            case Achive.UnLockChar_2:
+                isAchive = GameManager.instance.kill >= 5000;
                 break;
 
-            case Achive.UnLockBean:
+            case Achive.UnLockChar_3:
                 isAchive = GameManager.instance.gameTime == GameManager.instance.maxGameTime;
                 break;
         }

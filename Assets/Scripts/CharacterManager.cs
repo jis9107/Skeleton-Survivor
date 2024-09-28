@@ -49,14 +49,13 @@ public class CharacterManager : MonoBehaviour
         charDamage.text = charData[id].damage.ToString();
         charHealth.text = charData[id].maxHealth.ToString();
         levelUpPriceText.text = levelUpPirce.ToString();
-        if(dataManager.curMoney < levelUpPirce)
-        {
+
+        // 업그레이드에 필요한 돈이 부족할 시 Text color를 빨간색으로 변경
+        if(dataManager.curMoney < levelUpPirce) 
             levelUpPriceText.color = Color.red;
-        }
         else
-        {
             levelUpPriceText.color = Color.white;
-        }
+        
 
     }
 
