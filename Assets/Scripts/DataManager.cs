@@ -33,7 +33,7 @@ public class DataManager : MonoBehaviour
 
     private void Awake()
     {
-        if (!PlayerPrefs.HasKey("totalKill"))
+        if (!PlayerPrefs.HasKey("Data"))
             Init();
         Load();
     }
@@ -41,7 +41,7 @@ public class DataManager : MonoBehaviour
     private void Start()
     {
         ApplyText();
-        MissionApplyText();
+        MissionApply();
     }
 
 
@@ -68,17 +68,27 @@ public class DataManager : MonoBehaviour
         totalMoney = PlayerPrefs.GetInt("totalMoney");
         totalPlayTime = PlayerPrefs.GetInt("totalPlayTime");
 
+        missionkill = PlayerPrefs.GetInt("missionkill");
+        missionMoney = PlayerPrefs.GetInt("missionMoney");
+        missionTime = PlayerPrefs.GetInt("missionTime");
+
         curMoney = PlayerPrefs.GetInt("curMoney");
         curLuby = PlayerPrefs.GetInt("curLuby");
     }
 
     void Init() // HasKey가 없다면 생성
     {
+        PlayerPrefs.SetInt("Data", 1);
+
         PlayerPrefs.SetInt("totalKill", totalKill);
         PlayerPrefs.SetInt("totalMoney", totalMoney);
         PlayerPrefs.SetInt("totalPlayTime", totalPlayTime);
         PlayerPrefs.SetInt("curMoney", curMoney);
         PlayerPrefs.SetInt("curLuby", curLuby);
+
+        PlayerPrefs.SetInt("missionkill", missionkill);
+        PlayerPrefs.SetInt("missionMoney", missionMoney);
+        PlayerPrefs.SetInt("missionTime", missionTime);
 
         PlayerPrefs.Save();
     }
@@ -92,11 +102,17 @@ public class DataManager : MonoBehaviour
         curLubyText.text = curLuby.ToString();
     }
 
-    public void MissionApplyText()
+    public void MissionApply()
     {
         killMissionText.text = string.Format("누적 킬 {0}킬 달성하기", missionkill);
         moneyMissionText.text = string.Format("누적 머니 {0} 달성하기", missionMoney);
         timeMossionText.text = string.Format("플레이 타임 {0}초 달성하기", missionTime);
+        curMoneyText.text = curMoney.ToString();
+        curLubyText.text = curLuby.ToString();
+
+        PlayerPrefs.SetInt("missionkill", missionkill);
+        PlayerPrefs.SetInt("missionMoney", missionMoney);
+        PlayerPrefs.SetInt("missionTime", missionTime);
     }
 
 }

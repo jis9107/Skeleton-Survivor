@@ -148,15 +148,15 @@ public class AchiveManager : MonoBehaviour
         switch (missionAchive)
         {
             case MissionAchive.KillAhcive:
-                isAchive = data.missionkill >= data.totalKill;
+                isAchive = data.totalKill >= data.missionkill;
                 break;
 
             case MissionAchive.TimeAchive:
-                isAchive = data.missionTime >= data.totalPlayTime;
+                isAchive = data.totalPlayTime >= data.missionTime;
                 break;
 
             case MissionAchive.MoneyAchive:
-                isAchive = data.missionMoney >= data.totalMoney;
+                isAchive = data.totalMoney >= data.missionMoney;
                 break;
         }
 
@@ -165,7 +165,6 @@ public class AchiveManager : MonoBehaviour
         {
             PlayerPrefs.SetInt(missionAchive.ToString(), 1);
         }
-
         else
         {
             PlayerPrefs.SetInt(missionAchive.ToString(), 0);
@@ -177,19 +176,30 @@ public class AchiveManager : MonoBehaviour
     {
         switch (missionName)
         {
-            case "kill":
-                data.curMoney += data.missionkill;
+            case "Kill":
+                data.curMoney += data.missionkill * 100;
                 data.missionkill *= 2;
                 break;
+
+            case "Money":
+                data.curMoney += (data.missionMoney / 2);
+                data.missionMoney *= 2;
+                break;
+
+            case "Time":
+                data.curMoney += 500;
+                data.missionTime += 500;
+                break;
+
         }
+
+        UnLockMissionReward();
+        data.MissionApply();
 
         foreach (MissionAchive missionAchive in missionAchives)
         {
             CheckMission(missionAchive);
         }
-
-        UnLockMissionReward();
-        data.MissionApplyText();
     }
 
 
