@@ -188,7 +188,7 @@ public class AchiveManager : MonoBehaviour
 
             case "Time":
                 data.curMoney += 500;
-                data.missionTime += 500;
+                data.missionTime *= 2;
                 break;
 
         }
@@ -201,8 +201,6 @@ public class AchiveManager : MonoBehaviour
             CheckMission(missionAchive);
         }
     }
-
-
 
     IEnumerator NoticeRoutine()
     {
