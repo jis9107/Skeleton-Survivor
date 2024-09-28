@@ -28,8 +28,8 @@ public class AchiveManager : MonoBehaviour
     enum MissionAchive // 固记 崔己 诀利甸
     {
         KillAhcive,
-        TimeAchive,
-        MoneyAchive
+        MoneyAchive,
+        TimeAchive
     }
 
     MissionAchive[] missionAchives; // 固记 崔己 诀利 历厘家
