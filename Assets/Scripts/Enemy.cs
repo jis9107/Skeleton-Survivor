@@ -90,7 +90,8 @@ public class Enemy : MonoBehaviour
         if(health > 0) // live
         {
             anim.SetTrigger("Hit");
-            AudioManager.instance.PlaySFX(AudioManager.SFX.Hit);
+            if(AudioManager.instance.effectObject) // 효과음이 켜져 있다면
+                AudioManager.instance.PlaySFX(AudioManager.SFX.Hit);
         }
         else // die
         {
