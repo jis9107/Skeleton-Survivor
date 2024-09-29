@@ -18,5 +18,5 @@ MonoBehaviour:
   charImage: {fileID: -150523396, guid: 0c187a32c5bde4747be8d00770b07403, type: 3}
   speed: 3
   damage: 120
-  maxHealth: 300
+  maxHealth: 280
   level: 1
