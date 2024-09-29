@@ -65,6 +65,9 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySFX(SFX sfx)
     {
+        if (!effectObject) // 효과음 버튼이 꺼져 있으면 return;
+            return;
+
         for(int i = 0; i < sfxPlayers.Length; i++)
         {
             // 채널 개수만큼 순회하도록 채털인덱스 변수 활용
@@ -88,6 +91,9 @@ public class AudioManager : MonoBehaviour
 
     public void PlayBGM(bool isPlay)
     {
+        if (!bgmObject)
+            return;
+
         if (isPlay)
             bgmPlayer.Play();
 

@@ -90,8 +90,7 @@ public class Enemy : MonoBehaviour
         if(health > 0) // live
         {
             anim.SetTrigger("Hit");
-            if(AudioManager.instance.effectObject) // 효과음이 켜져 있다면
-                AudioManager.instance.PlaySFX(AudioManager.SFX.Hit);
+            AudioManager.instance.PlaySFX(AudioManager.SFX.Hit);
         }
         else // die
         {
@@ -104,9 +103,7 @@ public class Enemy : MonoBehaviour
             // 시간이 지나 게임 승리 시 모든 Enemy가 죽는 상태가 되므로 오디오 메모리가 극도로 늘어남을 방지한다
             if(GameManager.instance.isLive == true)
             {
-                if (AudioManager.instance.effectObject)
-                    AudioManager.instance.PlaySFX(AudioManager.SFX.Dead);
-
+                AudioManager.instance.PlaySFX(AudioManager.SFX.Dead);
                 GameManager.instance.kill++;
                 GameManager.instance.GetInGameMoney(50);
                 GameObject dropExp = GameManager.instance.pool.Get(3);
