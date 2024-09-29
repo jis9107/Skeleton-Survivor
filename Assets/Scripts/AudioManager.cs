@@ -15,7 +15,8 @@ public class AudioManager : MonoBehaviour
     AudioSource bgmPlayer;
     // 게임이 멈춰 있을 떄 BGM이 들리는 것을 방지하기 위해
     // 일정 주파수의 음역대는 거르는 컴포넌트를 사용
-    AudioHighPassFilter bgmEffect; 
+    AudioHighPassFilter bgmEffect;
+    bool bgmActive = true;
     
 
     [Header("#SFX")] // 효과음
@@ -24,6 +25,7 @@ public class AudioManager : MonoBehaviour
     public int channels;
     AudioSource[] sfxPlayers;
     int channelIndex;
+    bool effectActive = true;
 
     public enum SFX
     {
@@ -65,8 +67,6 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySFX(SFX sfx)
     {
-        if (!effectObject) // 효과음 버튼이 꺼져 있으면 return;
-            return;
 
         for(int i = 0; i < sfxPlayers.Length; i++)
         {
@@ -91,8 +91,6 @@ public class AudioManager : MonoBehaviour
 
     public void PlayBGM(bool isPlay)
     {
-        if (!bgmObject)
-            return;
 
         if (isPlay)
             bgmPlayer.Play();
@@ -104,5 +102,21 @@ public class AudioManager : MonoBehaviour
     public void EffectBGM(bool isPlay)
     {
         bgmEffect.enabled = isPlay;
+    }
+
+    public void soundActive(string soundType)
+    {
+        switch(soundType)
+        {
+            case "bgm":
+                bgmActive = !bgmActive;
+                Debug.Log(bgmActive);
+                break;
+
+            case "effect":
+                effectActive = !effectActive;
+                Debug.Log(effectActive);
+                break;
+        }
     }
 }

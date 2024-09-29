@@ -102,17 +102,19 @@ public class DataManager : MonoBehaviour
         curLubyText.text = curLuby.ToString();
     }
 
-    public void MissionApply()
+    public void MissionApply() 
     {
+        PlayerPrefs.SetInt("missionkill", missionkill);
+        PlayerPrefs.SetInt("missionMoney", missionMoney);
+        PlayerPrefs.SetInt("missionTime", missionTime);
+
         killMissionText.text = string.Format("누적 킬 {0}킬 달성하기", missionkill);
         moneyMissionText.text = string.Format("누적 머니 {0} 달성하기", missionMoney);
         timeMossionText.text = string.Format("플레이 타임 {0}초 달성하기", missionTime);
         curMoneyText.text = curMoney.ToString();
         curLubyText.text = curLuby.ToString();
 
-        PlayerPrefs.SetInt("missionkill", missionkill);
-        PlayerPrefs.SetInt("missionMoney", missionMoney);
-        PlayerPrefs.SetInt("missionTime", missionTime);
+
     }
 
 }

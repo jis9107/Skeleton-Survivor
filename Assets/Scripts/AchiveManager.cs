@@ -193,8 +193,10 @@ public class AchiveManager : MonoBehaviour
 
         }
 
-        UnLockMissionReward();
         data.MissionApply();
+
+
+        UnLockMissionReward();
 
         foreach (MissionAchive missionAchive in missionAchives)
         {
