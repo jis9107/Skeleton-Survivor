@@ -6,6 +6,9 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
 
+    public GameObject bgmObject;
+    public GameObject effectObject;
+
     [Header("#BGM")] // πË∞Ê¿Ω
     public AudioClip bgmClip;
     public float bgmVolume;
