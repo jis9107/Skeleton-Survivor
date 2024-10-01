@@ -19,9 +19,9 @@ public class CharacterManager : MonoBehaviour
     DataManager dataManager;
 
     // 추후에 저장 할 데이터
-    int nowCharacterId;
+    int inGameCharacterId; // 인게임에 저장된 캐릭터 ID (선택 버튼 누를 시)
+    int selectId; // 캐릭터 창을 통해 선택된 ID
     int levelUpPirce;
-    bool select;
 
     private void Awake()
     {
@@ -34,17 +34,16 @@ public class CharacterManager : MonoBehaviour
     {
         dataManager = data.GetComponent<DataManager>();
 
-        nowCharacterId = PlayerPrefs.GetInt("SelectCharacter");
-        Debug.Log(nowCharacterId);
-        OnSelectCharacter(nowCharacterId);
+        inGameCharacterId = PlayerPrefs.GetInt("SelectCharacter");
+        Debug.Log(inGameCharacterId);
+        OnSelectCharacter(selectId);
         
     }
     public void OnSelectCharacter(int id)
     {
-        if (nowCharacterId != id)
+        if (inGameCharacterId != id)
             selectButton.SetActive(true);
 
-        nowCharacterId = id;
         levelUpPirce = charData[id].level * 200;
         icon.sprite = charData[id].charImage;
         charName.text = charData[id].charName;
@@ -64,11 +63,13 @@ public class CharacterManager : MonoBehaviour
 
     public void ApplyCharacter() // 캐릭터 선택 버튼을 눌렀을 시 GamaManager에 변수를 선택 된 캐릭터의 데이터로 변환하는 함수
     {
+        inGameCharacterId = selectId;
+
         Init();
 
-        GameManager.instance.charDamage = charData[nowCharacterId].damage;
-        GameManager.instance.playerId = charData[nowCharacterId].charId;
-        GameManager.instance.maxHealth = charData[nowCharacterId].maxHealth;
+        GameManager.instance.charDamage = charData[inGameCharacterId].damage;
+        GameManager.instance.playerId = charData[inGameCharacterId].charId;
+        GameManager.instance.maxHealth = charData[inGameCharacterId].maxHealth;
     }
 
     public void CharacterUpgrade()
@@ -78,7 +79,7 @@ public class CharacterManager : MonoBehaviour
         if (money < levelUpPirce)
             return;
 
-        int id = nowCharacterId;
+        int id = selectId;
 
         charData[id].level++;
         charData[id].damage += 10;
@@ -91,8 +92,6 @@ public class CharacterManager : MonoBehaviour
 
     private void Init()
     {
-        PlayerPrefs.SetInt("SelectCharacter", nowCharacterId);
-
-        PlayerPrefs.Save();
+        PlayerPrefs.SetInt("SelectCharacter", inGameCharacterId);
     }
 }
