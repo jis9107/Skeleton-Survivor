@@ -7,9 +7,9 @@ public class CharacterManager : MonoBehaviour
 {
     public CharacterData[] charData;
 
-    public GameObject[] selectImages;
     public GameObject data;
     public GameObject selectButton;
+    public GameObject selectImage;
 
     public Image icon;
     public Text charName;
@@ -42,10 +42,16 @@ public class CharacterManager : MonoBehaviour
 
     public void CheckSelect() // 선택 버튼 활성화, 비활성화를 위한 로직
     {
-        if(tempId == inGameCharacterId)
+        if (tempId == inGameCharacterId)
+        {
             selectButton.SetActive(false);
+            selectImage.SetActive(true);
+        }
         else
+        {
             selectButton.SetActive(true);
+            selectImage.SetActive(false);
+        }
     }
     public void OnSelectCharacter(int id)
     {
