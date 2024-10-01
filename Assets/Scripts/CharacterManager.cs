@@ -20,7 +20,7 @@ public class CharacterManager : MonoBehaviour
 
     // 추후에 저장 할 데이터
     int inGameCharacterId; // 인게임에 저장된 캐릭터 ID (선택 버튼 누를 시)
-    int selectId; // 캐릭터 창을 통해 선택된 ID
+    int tempId; // 캐릭터 창을 통해 선택된 ID
     int levelUpPirce;
 
     private void Awake()
@@ -40,10 +40,6 @@ public class CharacterManager : MonoBehaviour
 
     public void ShowCharacter(int id)
     {
-        if (inGameCharacterId != selectId)
-            selectButton.SetActive(true);
-        else
-            selectButton.SetActive(false);
 
         levelUpPirce = charData[id].level * 200;
         icon.sprite = charData[id].charImage;
@@ -61,12 +57,6 @@ public class CharacterManager : MonoBehaviour
     }
     public void OnSelectCharacter(int id)
     {
-        selectId = id;
-
-        if (inGameCharacterId != selectId)
-            selectButton.SetActive(true);
-        else
-            selectButton.SetActive(false);
 
         levelUpPirce = charData[id].level * 200;
         icon.sprite = charData[id].charImage;
@@ -85,7 +75,7 @@ public class CharacterManager : MonoBehaviour
 
     public void ApplyCharacter() // 캐릭터 선택 버튼을 눌렀을 시 GamaManager에 변수를 선택 된 캐릭터의 데이터로 변환하는 함수
     {
-        inGameCharacterId = selectId;
+        inGameCharacterId = tempId;
 
         PlayerPrefs.SetInt("SelectCharacter", inGameCharacterId);
 
