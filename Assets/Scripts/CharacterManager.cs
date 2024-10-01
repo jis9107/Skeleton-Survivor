@@ -38,26 +38,15 @@ public class CharacterManager : MonoBehaviour
         Init();        
     }
 
-    public void ShowCharacter(int id)
+    public void CheckSelect() // 선택 버튼 활성화, 비활성화를 위한 로직
     {
-
-        levelUpPirce = charData[id].level * 200;
-        icon.sprite = charData[id].charImage;
-        charName.text = charData[id].charName;
-        charLv.text = charData[id].level.ToString();
-        charDamage.text = charData[id].damage.ToString();
-        charHealth.text = charData[id].maxHealth.ToString();
-        levelUpPriceText.text = levelUpPirce.ToString();
-
-        // 업그레이드에 필요한 돈이 부족할 시 Text color를 빨간색으로 변경
-        if (dataManager.curMoney < levelUpPirce)
-            levelUpPriceText.color = Color.red;
+        if(tempId == inGameCharacterId)
+            selectButton.SetActive(false);
         else
-            levelUpPriceText.color = Color.white;
+            selectButton.SetActive(true);
     }
     public void OnSelectCharacter(int id)
     {
-
         levelUpPirce = charData[id].level * 200;
         icon.sprite = charData[id].charImage;
         charName.text = charData[id].charName;
@@ -71,6 +60,8 @@ public class CharacterManager : MonoBehaviour
             levelUpPriceText.color = Color.red;
         else
             levelUpPriceText.color = Color.white;
+
+        CheckSelect();
     }
 
     public void ApplyCharacter() // 캐릭터 선택 버튼을 눌렀을 시 GamaManager에 변수를 선택 된 캐릭터의 데이터로 변환하는 함수
@@ -91,15 +82,13 @@ public class CharacterManager : MonoBehaviour
         if (money < levelUpPirce)
             return;
 
-        int id = selectId;
+        int id = tempId;
 
         charData[id].level++;
         charData[id].damage += 10;
         charData[id].maxHealth += 15;
         dataManager.curMoney -= levelUpPirce;
         OnSelectCharacter(id);
-
-
     }
 
     private void Init()
@@ -113,5 +102,7 @@ public class CharacterManager : MonoBehaviour
         charDamage.text = charData[inGameCharacterId].damage.ToString();
         charHealth.text = charData[inGameCharacterId].maxHealth.ToString();
         levelUpPriceText.text = levelUpPirce.ToString();
+
+        CheckSelect();
     }
 }
