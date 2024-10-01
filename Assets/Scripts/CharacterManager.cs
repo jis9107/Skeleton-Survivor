@@ -7,6 +7,7 @@ public class CharacterManager : MonoBehaviour
 {
     public CharacterData[] charData;
     public GameObject data;
+    public GameObject selectButton;
 
     public Image icon;
     public Text charName;
@@ -37,8 +38,6 @@ public class CharacterManager : MonoBehaviour
         OnSelectCharacter(nowCharacterId);
         
     }
-
-
     public void OnSelectCharacter(int id)
     {
         nowCharacterId = id;
@@ -51,7 +50,7 @@ public class CharacterManager : MonoBehaviour
         levelUpPriceText.text = levelUpPirce.ToString();
 
         // 업그레이드에 필요한 돈이 부족할 시 Text color를 빨간색으로 변경
-        if(dataManager.curMoney < levelUpPirce) 
+        if(dataManager.curMoney < levelUpPirce)
             levelUpPriceText.color = Color.red;
         else
             levelUpPriceText.color = Color.white;
