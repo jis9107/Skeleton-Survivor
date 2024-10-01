@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class CharacterManager : MonoBehaviour
 {
     public CharacterData[] charData;
+
+    public GameObject[] selectImages;
     public GameObject data;
     public GameObject selectButton;
 

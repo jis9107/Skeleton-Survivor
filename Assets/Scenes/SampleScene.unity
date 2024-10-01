@@ -18420,6 +18420,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d7bc8f88f0c6fbb4b8377df0372576b5, type: 2}
   - {fileID: 11400000, guid: 1b925106b9d3fc649bca5499c64e47b3, type: 2}
   - {fileID: 11400000, guid: c39d44b6319e3b74ca2b64f3fd561e33, type: 2}
+  selectImages: []
   data: {fileID: 270290901}
   selectButton: {fileID: 256565326}
   icon: {fileID: 944004412}
@@ -22797,7 +22798,7 @@ GameObject:
   - component: {fileID: 742355401}
   - component: {fileID: 742355400}
   m_Layer: 5
-  m_Name: Player Upgrade
+  m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24897,8 +24898,8 @@ RectTransform:
   - {fileID: 200482239}
   - {fileID: 293278055}
   - {fileID: 2053381543}
-  - {fileID: 408752875}
   - {fileID: 666341412}
+  - {fileID: 408752875}
   - {fileID: 726165690}
   m_Father: {fileID: 742355399}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
