@@ -37,6 +37,28 @@ public class CharacterManager : MonoBehaviour
         Debug.Log(inGameCharacterId);
         Init();        
     }
+
+    public void ShowCharacter(int id)
+    {
+        if (inGameCharacterId != selectId)
+            selectButton.SetActive(true);
+        else
+            selectButton.SetActive(false);
+
+        levelUpPirce = charData[id].level * 200;
+        icon.sprite = charData[id].charImage;
+        charName.text = charData[id].charName;
+        charLv.text = charData[id].level.ToString();
+        charDamage.text = charData[id].damage.ToString();
+        charHealth.text = charData[id].maxHealth.ToString();
+        levelUpPriceText.text = levelUpPirce.ToString();
+
+        // 업그레이드에 필요한 돈이 부족할 시 Text color를 빨간색으로 변경
+        if (dataManager.curMoney < levelUpPirce)
+            levelUpPriceText.color = Color.red;
+        else
+            levelUpPriceText.color = Color.white;
+    }
     public void OnSelectCharacter(int id)
     {
         selectId = id;
