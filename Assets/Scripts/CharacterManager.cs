@@ -35,15 +35,16 @@ public class CharacterManager : MonoBehaviour
         dataManager = data.GetComponent<DataManager>();
 
         Debug.Log(inGameCharacterId);
-        Init();
-
-        //OnSelectCharacter(selectId);
-        
+        Init();        
     }
     public void OnSelectCharacter(int id)
     {
-        if (inGameCharacterId != id)
+        selectId = id;
+
+        if (inGameCharacterId != selectId)
             selectButton.SetActive(true);
+        else
+            selectButton.SetActive(false);
 
         levelUpPirce = charData[id].level * 200;
         icon.sprite = charData[id].charImage;
@@ -64,7 +65,7 @@ public class CharacterManager : MonoBehaviour
     {
         inGameCharacterId = selectId;
 
-        Init();
+        PlayerPrefs.SetInt("SelectCharacter", inGameCharacterId);
 
         GameManager.instance.charDamage = charData[inGameCharacterId].damage;
         GameManager.instance.playerId = charData[inGameCharacterId].charId;
