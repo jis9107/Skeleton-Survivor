@@ -21,7 +21,7 @@ public class CharacterManager : MonoBehaviour
     // 추후에 저장 할 데이터
     int nowCharacterId;
     int levelUpPirce;
-    int selectId;
+    bool select;
 
     private void Awake()
     {
@@ -41,6 +41,9 @@ public class CharacterManager : MonoBehaviour
     }
     public void OnSelectCharacter(int id)
     {
+        if (nowCharacterId != id)
+            selectButton.SetActive(true);
+
         nowCharacterId = id;
         levelUpPirce = charData[id].level * 200;
         icon.sprite = charData[id].charImage;
