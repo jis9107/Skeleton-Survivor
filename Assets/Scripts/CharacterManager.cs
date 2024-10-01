@@ -26,7 +26,7 @@ public class CharacterManager : MonoBehaviour
     private void Awake()
     {
         if (!PlayerPrefs.HasKey("SelectCharacter"))
-            Init();
+            PlayerPrefs.SetInt("SelectCharacter", inGameCharacterId);
     }
 
 
@@ -34,9 +34,10 @@ public class CharacterManager : MonoBehaviour
     {
         dataManager = data.GetComponent<DataManager>();
 
-        inGameCharacterId = PlayerPrefs.GetInt("SelectCharacter");
         Debug.Log(inGameCharacterId);
-        OnSelectCharacter(selectId);
+        Init();
+
+        //OnSelectCharacter(selectId);
         
     }
     public void OnSelectCharacter(int id)
@@ -57,8 +58,6 @@ public class CharacterManager : MonoBehaviour
             levelUpPriceText.color = Color.red;
         else
             levelUpPriceText.color = Color.white;
-        
-
     }
 
     public void ApplyCharacter() // 캐릭터 선택 버튼을 눌렀을 시 GamaManager에 변수를 선택 된 캐릭터의 데이터로 변환하는 함수
@@ -92,6 +91,14 @@ public class CharacterManager : MonoBehaviour
 
     private void Init()
     {
-        PlayerPrefs.SetInt("SelectCharacter", inGameCharacterId);
+        inGameCharacterId = PlayerPrefs.GetInt("SelectCharacter");
+
+        levelUpPirce = charData[inGameCharacterId].level * 200;
+        icon.sprite = charData[inGameCharacterId].charImage;
+        charName.text = charData[inGameCharacterId].charName;
+        charLv.text = charData[inGameCharacterId].level.ToString();
+        charDamage.text = charData[inGameCharacterId].damage.ToString();
+        charHealth.text = charData[inGameCharacterId].maxHealth.ToString();
+        levelUpPriceText.text = levelUpPirce.ToString();
     }
 }
