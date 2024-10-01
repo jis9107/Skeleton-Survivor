@@ -73,6 +73,8 @@ public class CharacterManager : MonoBehaviour
         GameManager.instance.charDamage = charData[inGameCharacterId].damage;
         GameManager.instance.playerId = charData[inGameCharacterId].charId;
         GameManager.instance.maxHealth = charData[inGameCharacterId].maxHealth;
+
+        CheckSelect();
     }
 
     public void CharacterUpgrade()
