@@ -47,6 +47,8 @@ public class CharacterManager : MonoBehaviour
     }
     public void OnSelectCharacter(int id)
     {
+        tempId = id;
+
         levelUpPirce = charData[id].level * 200;
         icon.sprite = charData[id].charImage;
         charName.text = charData[id].charName;
@@ -96,6 +98,7 @@ public class CharacterManager : MonoBehaviour
     private void Init()
     {
         inGameCharacterId = PlayerPrefs.GetInt("SelectCharacter");
+        tempId = inGameCharacterId;
 
         levelUpPirce = charData[inGameCharacterId].level * 200;
         icon.sprite = charData[inGameCharacterId].charImage;
