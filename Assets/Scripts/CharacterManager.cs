@@ -21,6 +21,7 @@ public class CharacterManager : MonoBehaviour
     // 추후에 저장 할 데이터
     int nowCharacterId;
     int levelUpPirce;
+    int selectId;
 
     private void Awake()
     {
