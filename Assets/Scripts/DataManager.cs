@@ -98,6 +98,7 @@ public class DataManager : MonoBehaviour
         totalKillText.text = string.Format("현재 누적킬 수 : {0}", totalKill);
         totalMoneyText.text = string.Format("현재 누적 머니 : {0}", totalMoney);
         totalPlayTimeText.text = string.Format("현재 플레이 타임 : {0}", totalPlayTime);
+
         curMoneyText.text = curMoney.ToString();
         curLubyText.text = curLuby.ToString();
     }

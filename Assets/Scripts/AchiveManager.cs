@@ -72,6 +72,11 @@ public class AchiveManager : MonoBehaviour
     {
         UnlockCharacter();
 
+        foreach (MissionAchive mission in missionAchives)
+        {
+            CheckMission(mission);
+        }
+
     }
 
     void UnlockCharacter()
@@ -84,17 +89,6 @@ public class AchiveManager : MonoBehaviour
             unlockCharacter[i].SetActive(isUnlock);
         }
     }
-
-/*    void UnLockMissionReward()
-    {
-        for(int i = 0; i < lockReward.Length; i++)
-        {
-            string rewardName = missionAchives[i].ToString();
-            bool isUnLock = PlayerPrefs.GetInt(rewardName) == 1;
-            lockReward[i].SetActive(!isUnLock);
-            unLockReward[i].SetActive(isUnLock);
-        }
-    }*/
 
     private void LateUpdate()
     {
@@ -134,11 +128,29 @@ public class AchiveManager : MonoBehaviour
         }
     }
 
-    public void CheckMission()
+    void CheckMission(MissionAchive mission)
     {
-        for(int i = 0; i < rewards.Length; i++)
-        {
+        bool isAchive = false;
 
+        switch(mission)
+        {
+            case MissionAchive.KillAhcive:
+                isAchive = data.totalKill >= data.missionkill;
+                if(isAchive)
+                    rewards[0].SetActive(true);
+                break;
+
+            case MissionAchive.MoneyAchive:
+                isAchive = data.totalMoney >= data.missionMoney;
+                if (isAchive)
+                    rewards[1].SetActive(true);
+                break;
+
+            case MissionAchive.TimeAchive:
+                isAchive = data.totalPlayTime >= data.missionTime;
+                if (isAchive)
+                    rewards[2].SetActive(true);
+                break;
         }
     }
     
@@ -194,11 +206,14 @@ public class AchiveManager : MonoBehaviour
                 break;
 
         }
-
         data.MissionApply();
 
+        foreach(MissionAchive mission in missionAchives)
+        {
+            CheckMission(mission);
+        }
+        Debug.Log(data.missionkill);
 
-        //UnLockMissionReward();
     }
 
     IEnumerator NoticeRoutine()
