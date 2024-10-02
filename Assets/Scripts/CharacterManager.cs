@@ -37,7 +37,8 @@ public class CharacterManager : MonoBehaviour
         dataManager = data.GetComponent<DataManager>();
 
         Debug.Log(inGameCharacterId);
-        Init();        
+        Init();
+        ApplyCharacter();
     }
 
     public void CheckSelect() // 선택 버튼 활성화, 비활성화를 위한 로직
