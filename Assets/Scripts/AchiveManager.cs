@@ -55,10 +55,16 @@ public class AchiveManager : MonoBehaviour
     void Init()
     {
         PlayerPrefs.SetInt("MyData", 1); // Key Value 로 저장
+
         // 업적 초기화
         foreach (Achive achive in achives)
         {
             PlayerPrefs.SetInt(achive.ToString(), 0);
+        }
+
+        foreach(MissionAchive mission in missionAchives)
+        {
+            PlayerPrefs.SetInt(mission.ToString(), 0);
         }
     }
 
@@ -127,6 +133,15 @@ public class AchiveManager : MonoBehaviour
             StartCoroutine(NoticeRoutine());
         }
     }
+
+    public void CheckMission()
+    {
+        for(int i = 0; i < rewards.Length; i++)
+        {
+
+        }
+    }
+    
 
 /*    void CheckMission(MissionAchive missionAchive)
     {
