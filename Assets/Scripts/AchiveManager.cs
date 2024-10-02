@@ -60,24 +60,12 @@ public class AchiveManager : MonoBehaviour
         {
             PlayerPrefs.SetInt(achive.ToString(), 0);
         }
-
-        foreach (MissionAchive missionAchive in missionAchives)
-        {
-            PlayerPrefs.SetInt(missionAchive.ToString(), 0);
-        }
-
     }
 
     private void Start()
     {
         UnlockCharacter();
 
-        foreach (MissionAchive missionAchive in missionAchives)
-        {
-            CheckMission(missionAchive);
-        }
-
-        //UnLockMissionReward();
     }
 
     void UnlockCharacter()
@@ -140,7 +128,7 @@ public class AchiveManager : MonoBehaviour
         }
     }
 
-    void CheckMission(MissionAchive missionAchive)
+/*    void CheckMission(MissionAchive missionAchive)
     {
         bool isAchive = false;
 
@@ -168,7 +156,7 @@ public class AchiveManager : MonoBehaviour
         {
             PlayerPrefs.SetInt(missionAchive.ToString(), 0);
         }
-    }
+    }*/
 
     
     public void Reward(string missionName) // 업적 달성 후 보상 받기 클릭 시
@@ -196,11 +184,6 @@ public class AchiveManager : MonoBehaviour
 
 
         //UnLockMissionReward();
-
-        foreach (MissionAchive missionAchive in missionAchives)
-        {
-            CheckMission(missionAchive);
-        }
     }
 
     IEnumerator NoticeRoutine()
