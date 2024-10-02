@@ -11,8 +11,7 @@ public class AchiveManager : MonoBehaviour
     public GameObject[] lockCharacter;
     public GameObject[] unlockCharacter;
 
-    public GameObject[] lockReward;
-    public GameObject[] unLockReward;
+    public GameObject[] rewards;
 
     public GameObject uiNotice;
 
@@ -78,7 +77,7 @@ public class AchiveManager : MonoBehaviour
             CheckMission(missionAchive);
         }
 
-        UnLockMissionReward();
+        //UnLockMissionReward();
     }
 
     void UnlockCharacter()
@@ -92,7 +91,7 @@ public class AchiveManager : MonoBehaviour
         }
     }
 
-    void UnLockMissionReward()
+/*    void UnLockMissionReward()
     {
         for(int i = 0; i < lockReward.Length; i++)
         {
@@ -101,7 +100,7 @@ public class AchiveManager : MonoBehaviour
             lockReward[i].SetActive(!isUnLock);
             unLockReward[i].SetActive(isUnLock);
         }
-    }
+    }*/
 
     private void LateUpdate()
     {
@@ -196,7 +195,7 @@ public class AchiveManager : MonoBehaviour
         data.MissionApply();
 
 
-        UnLockMissionReward();
+        //UnLockMissionReward();
 
         foreach (MissionAchive missionAchive in missionAchives)
         {
