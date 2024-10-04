@@ -26,12 +26,12 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.CompareTag("Enemy") || per == -100)
+        if (!collision.CompareTag("Enemy") || per == -1) // per == -1 은 근접 무기이기 때문에 실행 할 필요가 없다.
             return;
 
         per--;
 
-        if( per == -100)
+        if( per == -1)
         {
             rigid.velocity = Vector2.zero;
             gameObject.SetActive(false);
