@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class DataManager : MonoBehaviour
 {
-    [Header("# Text")]
+    [Header("# PlayerInfoText")]
+    public Text nickName;
     public Text totalKillText;
     public Text totalMoneyText;
     public Text totalPlayTimeText;
@@ -64,6 +65,8 @@ public class DataManager : MonoBehaviour
 
     public void Load()
     {
+        nickName.text = PlayerPrefs.GetString("PlayerNickName");
+
         totalKill = PlayerPrefs.GetInt("totalKill");
         totalMoney = PlayerPrefs.GetInt("totalMoney");
         totalPlayTime = PlayerPrefs.GetInt("totalPlayTime");

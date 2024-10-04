@@ -17,7 +17,7 @@ public class LogIn : MonoBehaviour
         if (PlayerPrefs.HasKey("PlayerNickName"))
             SceneManager.LoadScene(1);
     }
-    void OnClickSetButton()
+    public void OnClickSetButton()
     {
         string nick = inputNick.text;
         PlayerPrefs.SetString("PlayerNickName", nick);

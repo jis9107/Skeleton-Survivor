@@ -3376,6 +3376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdc54f0c765828149a175a8e316ae4cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nickName: {fileID: 1350410204}
   totalKillText: {fileID: 1362753524}
   totalMoneyText: {fileID: 166440526}
   totalPlayTimeText: {fileID: 1589786285}
@@ -29287,7 +29288,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\uC815\uC2E0\uBC14\uC9DD\uCC28\uB824"
+  m_Text: 
 --- !u!222 &1350410205
 CanvasRenderer:
   m_ObjectHideFlags: 0
