@@ -14,8 +14,8 @@ public class LogIn : MonoBehaviour
 
     private void Awake()
     {
-        if (PlayerPrefs.HasKey("PlayerNickName"))
-            SceneManager.LoadScene(1);
+/*        if (PlayerPrefs.HasKey("PlayerNickName"))
+            SceneManager.LoadScene(1);*/
     }
     public void OnClickSetButton()
     {
