@@ -1,0 +1,8 @@
+2D GUI
+	- 각종 버튼 및 회복 효과
+
+
+Free Platform Game Assets
+	- 코인 및 보물 상자
+	- 회전체 
+	- 잔디
